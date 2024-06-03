@@ -1,72 +1,56 @@
-/* Basic styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+/* dashboard.css */
+
+.dashboard {
+    margin-left: 250px; /* Width of the sidebar */
+    padding: 20px; 
   }
   
-  /* Dashboard container */
-  .dashboard {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    min-height: 100vh;
-    padding: 20px;
-  }
-  
-  /* Dashboard title */
-  .dashboard-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  /* Dashboard cards container */
   .dashboard-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* grid-cols-1 */
+    gap: 1.5rem; /* gap-6 */
+    padding: 1rem; /* p-4 */
   }
   
-  /* Dashboard card */
   .dashboard-card {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    background-color: #ffffff;
+    border-radius: 8px;
     padding: 20px;
-    margin: 10px;
     text-align: center;
-    width: calc(25% - 40px);
-    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
   }
   
-  /* Dashboard card icon */
+  .dashboard-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
   .dashboard-icon {
     font-size: 3rem;
     margin-bottom: 10px;
+  }
+  
+  .dashboard-card-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-card-description {
+    font-size: 1.2rem;
     color: #666;
   }
   
-  /* Dashboard card title */
-  .dashboard-card-title {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+  /* Medium screens (md) */
+  @media (min-width: 768px) {
+    .dashboard-cards {
+      grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
+    }
   }
   
-  /* Dashboard card description */
-  .dashboard-card-description {
-    font-size: 0.9rem;
-    color: #888;
-  }
-  
-  /* Dashboard charts container */
-  .dashboard-charts {
-    flex-grow: 1;
-  }
-  
-  /* Dashboard chart title */
-  .dashboard-chart-title {
-    margin-bottom: 20px;
+  /* Large screens (lg) */
+  @media (min-width: 1024px) {
+    .dashboard-cards {
+      grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-4 */
+    }
   }
   

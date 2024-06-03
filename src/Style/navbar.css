@@ -1,4 +1,5 @@
-/* Navbar.css */
+/* navbar.css */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -6,13 +7,10 @@
   background-color: #121412;
   color: #fff;
   padding: 1.5rem;
-  flex-wrap: wrap; 
 }
 
 .navbar-menu {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  display: none; /* Hidden by default on normal screens */
 }
 
 .hamburger {
@@ -27,8 +25,6 @@
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
-  flex-grow: 1;
-  text-align: center;
 }
 
 .navbar-brand a {
@@ -55,19 +51,49 @@
 .user-info {
   display: flex;
   align-items: center;
+  font-size: 1.1rem;
 }
 
-.user-info svg {
-  margin-right: 0.5rem;
+.user-avatar {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  margin-right: 8px;
 }
 
-@media screen and (max-width: 768px) {
-  .navbar-brand {
-    font-size: 1.2rem;
+/* Small screens (sm) */
+@media (max-width: 767px) {
+  .navbar-menu {
+    display: block;
+  }
+
+  .navbar-nav {
+    display: none;
+    position: absolute;
+    top: 60px; /* Height of the navbar */
+    left: 0;
+    width: 100%;
+    background-color: #121412;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-nav.active {
+    display: flex;
+    flex-direction: column;
   }
 
   .nav-item {
-    margin-left: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  .user-info {
+    display: none;
   }
 }
-
