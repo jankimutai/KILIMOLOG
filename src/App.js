@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{ useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Sidebar from './Components/Sidebar';
+import MilkRecords from './Pages/MilkRecords';
+import Dashboard from './Pages/Dashboard';
+import Navbar from './Components/Navbar';
+import "./app.css"
+const App = () => {
+  const userName = "Jan Kimutai"; 
+  const [isSidebarVisible, setSidebarVisible] = useState(false);
 
-function App() {
+  const toggleSidebar = () => {
+    setSidebarVisible(!isSidebarVisible);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app-container">
+        <Navbar userName={userName} toggleSidebar={toggleSidebar} />
+        <Sidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
+        <div className="main-content">
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/milk-records" element={<MilkRecords />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
