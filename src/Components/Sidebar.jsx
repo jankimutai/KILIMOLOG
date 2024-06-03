@@ -6,9 +6,6 @@ import '../Style/sidebar.css';
 const Sidebar = ({ isVisible, toggleSidebar }) => {
   return (
     <nav className={`sidebar ${isVisible ? 'visible' : ''}`}>
-      <div className="sidebar-header">
-        <FaTimes className="close-icon" onClick={toggleSidebar} />
-      </div>
       <div className="sidebar-links">
         <ul>
           <li onClick={toggleSidebar}>
