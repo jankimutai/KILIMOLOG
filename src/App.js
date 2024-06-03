@@ -4,6 +4,8 @@ import Sidebar from './Components/Sidebar';
 import MilkRecords from './Pages/MilkRecords';
 import Dashboard from './Pages/Dashboard';
 import Navbar from './Components/Navbar';
+import Settings from "./Pages/Settings"
+import FarmRecords from './Pages/FarmRecords';
 import "./app.css"
 const App = () => {
   const userName = "Jan Kimutai"; 
@@ -19,8 +21,11 @@ const App = () => {
         <Sidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
         <div className="main-content">
           <Routes>
+          <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/farm-records" element={<FarmRecords />} />
             <Route path="/milk-records" element={<MilkRecords />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </div>
       </div>
