@@ -6,7 +6,6 @@ import '../Style/dashboard.css';
 const Dashboard = () => {
   return (
     <div className="dashboard">
-      <h1 className="dashboard-title">Farm Dashboard</h1>
       <div className="dashboard-cards">
         <div className="dashboard-card">
           <FaTachometerAlt className="dashboard-icon" />
