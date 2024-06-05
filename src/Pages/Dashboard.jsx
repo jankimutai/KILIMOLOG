@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaTachometerAlt, FaTractor, FaGlassWhiskey } from 'react-icons/fa';
-
 import '../Style/dashboard.css';
 
 const Dashboard = () => {
@@ -23,8 +22,6 @@ const Dashboard = () => {
           <p className="dashboard-card-description">Track milk production and sales.</p>
         </div>
       </div>
-
-      
     </div>
   );
 };
