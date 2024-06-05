@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaTachometerAlt, FaTractor, FaGlassWhiskey, FaCog, FaTimes } from 'react-icons/fa';
+import { FaTachometerAlt, FaTractor, FaGlassWhiskey, FaCog } from 'react-icons/fa';
 import '../Style/sidebar.css';
 
 const Sidebar = ({ isVisible, toggleSidebar }) => {
   return (
-    <nav className={`sidebar ${isVisible ? 'visible' : ''}`}>
+    <aside className={`sidebar ${isVisible ? 'visible' : ''}`}>
       <div className="sidebar-links">
         <ul>
           <li onClick={toggleSidebar}>
@@ -30,7 +30,7 @@ const Sidebar = ({ isVisible, toggleSidebar }) => {
           </li>
         </ul>
       </div>
-    </nav>
+    </aside>
   );
 };
 
