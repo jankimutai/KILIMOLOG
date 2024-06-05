@@ -6,7 +6,7 @@
   width: 18%;
   height: 100vh;
   background-color: #245036;
-  font-size: 1em;
+  font-size: 1.3em;
   z-index: 1000;
   transition: transform 0.3s ease;
   transform: translateX(0); /* Visible by default */
@@ -39,10 +39,11 @@
   line-height: 4em;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 0.4em;
   color: white;
   display: block;
   transition: all ease-out 300ms;
+
+  
 }
 
 .sidebar-links ul li.active a {
@@ -84,7 +85,7 @@
   .sidebar {
     width: 100%; /* Cover the whole screen on small screens */
     transform: translateX(-100%); /* Hide sidebar by default */
-    font-size: 1em;
+    font-size: 1.1em;
   }
 
   .sidebar.visible {
@@ -92,7 +93,10 @@
   }
 
   .sidebar-links {
-    margin: 0; /* Remove left and right margin on small screens */
-    text-align: center; /* Center the links */
+    justify-content: flex-start; /* Align items at the top */
+  }
+  .sidebar-links ul li a {
+    line-height: 2em;
+    letter-spacing: 0.2em;
   }
 }
