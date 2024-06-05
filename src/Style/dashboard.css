@@ -1,56 +1,60 @@
-/* dashboard.css */
 
 .dashboard {
-    margin-left: 250px; /* Width of the sidebar */
-    padding: 20px; 
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+}
+
+.dashboard-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-10px);
+}
+
+.dashboard-icon {
+  color: #5e42a6;
+  font-size: 3em;
+}
+
+.dashboard-card-title {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+.dashboard-card-description {
+  font-size: 1em;
+  color: #666;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
   .dashboard-cards {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* grid-cols-1 */
-    gap: 1.5rem; /* gap-6 */
-    padding: 1rem; /* p-4 */
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .dashboard-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    width: 80%;
+    margin: 10px 0;
   }
-  
-  .dashboard-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .dashboard-icon {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
-  
-  .dashboard-card-title {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  
-  .dashboard-card-description {
-    font-size: 1.2rem;
-    color: #666;
-  }
-  
-  /* Medium screens (md) */
-  @media (min-width: 768px) {
-    .dashboard-cards {
-      grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
-    }
-  }
-  
-  /* Large screens (lg) */
-  @media (min-width: 1024px) {
-    .dashboard-cards {
-      grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-4 */
-    }
-  }
-  
+}

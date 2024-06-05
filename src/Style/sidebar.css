@@ -1,36 +1,27 @@
-/* sidebar.css */
 
 .sidebar {
-  width: 250px;
-  background-color: #1e293b;
-  color: white;
   position: fixed;
-  margin-top: 86px; /* Height of the navbar */
-  bottom: 0;
+  top: 0;
   left: 0;
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
-  z-index: 1000; /* Ensure it is above other content */
-  transition: left 0.3s ease;
+  width: 18%;
+  height: 100vh;
+  background-color: #245036;
+  font-size: 0.9em;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  transform: translateX(0); /* Visible by default */
 }
 
-.sidebar.visible {
-  left: 0; /* Slide in */
-}
-
-.sidebar-header {
-  display: none; /* Hidden by default on normal screens */
-}
-
-.close-icon {
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: none; /* Hidden by default on normal screens */
+.sidebar.hidden {
+  transform: translateX(-100%); /* Hide sidebar in small and medium screens */
 }
 
 .sidebar-links {
-  flex-grow: 1;
+  position: relative;
+  text-align: center; /* Center the links */
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
 }
 
 .sidebar-links ul {
@@ -39,82 +30,79 @@
   margin: 0;
 }
 
-.sidebar-links li {
-  padding: 16px;
+.sidebar-links ul li {
+  position: relative;
+  margin: 3.2em 0;
 }
 
-.sidebar-links li a {
-  display: flex;
-  align-items: center;
+.sidebar-links ul li a {
+  line-height: 5em;
+  text-transform: uppercase;
   text-decoration: none;
+  letter-spacing: 0.4em;
+  color: rgba(255, 255, 255, 0.577);
+  display: block;
+  transition: all ease-out 300ms;
+}
+
+.sidebar-links ul li.active a {
   color: white;
-  font-size: 1rem;
 }
 
-.sidebar-links li a:hover {
-  background-color: #334155;
+.sidebar-links ul li:not(.active)::after {
+  opacity: 0.2;
 }
 
-.icon {
-  margin-right: 8px;
-  font-size: 1.2rem;
+.sidebar-links ul li:not(.active):hover a {
+  color: rgba(255, 255, 255, 0.75);
 }
 
-/* Small screens */
-@media (max-width: 768px) {
+.sidebar-links ul li::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.2em;
+  background: black;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right, #5e42a6, #b74e91);
+}
+
+/* Menu button styles */
+.menu-btn {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1100; /* Above the sidebar */
+}
+
+.menu-btn svg {
+  font-size: 20px;
+}
+
+@media (max-width: 992px) {
+  .menu-btn {
+    display: block;
+  }
+
   .sidebar {
-    position: fixed;
-    left: -300px;
-    margin-top: 76px; /* Height of the navbar */
-    bottom: 0;
-    width: 300px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease;
+    width: 100%; /* Cover the whole screen on small screens */
+    transform: translateX(-100%); /* Hide sidebar by default */
+    font-size: 1em;
   }
-  
+
   .sidebar.visible {
-    left: 0;
+    transform: translateX(0); /* Show sidebar when visible */
   }
-  
-  .sidebar-header {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem;
-  }
-  
-  .close-icon {
-    cursor: pointer;
-    font-size: 1.5rem;
-  }
-  
+
   .sidebar-links {
-    padding: 1rem;
-  }
-  
-  .sidebar-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar-links li {
-    margin-bottom: 1rem;
-  }
-  
-  .sidebar-links li a {
-    display: flex;
-    align-items: center;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  
-  .sidebar-links li a:hover {
-    color: #007bff;
-  }
-  
-  .icon {
-    margin-right: 0.5rem;
+    margin: 0; /* Remove left and right margin on small screens */
+    text-align: center; /* Center the links */
   }
 }

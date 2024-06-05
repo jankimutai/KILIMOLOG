@@ -1,99 +1,81 @@
-/* navbar.css */
 
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #121412;
-  color: #fff;
-  padding: 1.5rem;
+  justify-content: space-between;
+  background-color: #245036;
+  padding: 10px;
+  color: white;
 }
 
 .navbar-menu {
-  display: none; /* Hidden by default on normal screens */
+  display: flex;
+  align-items: center;
 }
 
-.hamburger {
-  font-size: 1.5rem;
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
   cursor: pointer;
 }
 
-.hamburger:hover {
-  color: #ccc;
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
+.navbar-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
-.navbar-brand a {
-  color: #fff;
-  text-decoration: none;
-}
-
 .navbar-nav {
-  display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item {
-  margin-left: 1rem;
-}
-
-.nav-item a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.user-info {
   display: flex;
   align-items: center;
-  font-size: 1.1rem;
+  padding: 0;
+  margin: 0;
 }
 
-.user-avatar {
-  width: 39px;
-  height: 39px;
+.navbar-nav .nav-item {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .user-avatar {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
-/* Small screens (sm) */
-@media (max-width: 767px) {
+/* Media Queries for Small Screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .navbar-menu {
-    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .navbar-brand a {
+    font-size: 1.2em;
   }
 
   .navbar-nav {
     display: none;
-    position: absolute;
-    top: 60px; /* Height of the navbar */
-    left: 0;
-    width: 100%;
-    background-color: #121412;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-
-  .navbar-nav.active {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav-item {
-    margin: 1rem 0;
-  }
-
-  .nav-item a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-
-  .user-info {
-    display: none;
+  .navbar-nav .nav-item {
+    margin-left: 0;
   }
 }
