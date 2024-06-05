@@ -6,7 +6,7 @@
   width: 18%;
   height: 100vh;
   background-color: #245036;
-  font-size: 0.9em;
+  font-size: 1em;
   z-index: 1000;
   transition: transform 0.3s ease;
   transform: translateX(0); /* Visible by default */
@@ -36,11 +36,11 @@
 }
 
 .sidebar-links ul li a {
-  line-height: 5em;
+  line-height: 4em;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.4em;
-  color: rgba(255, 255, 255, 0.577);
+  color: white;
   display: block;
   transition: all ease-out 300ms;
 }
@@ -55,17 +55,7 @@
 
 .sidebar-links ul li:not(.active):hover a {
   color: rgba(255, 255, 255, 0.75);
-}
-
-.sidebar-links ul li::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 0.2em;
-  background: black;
-  left: 0;
-  bottom: 0;
-  background-image: linear-gradient(to right, #5e42a6, #b74e91);
+  background-color: #2d6343
 }
 
 /* Menu button styles */
