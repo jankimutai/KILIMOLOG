@@ -17,7 +17,7 @@ const App = () => {
   return (
     <Router>
       <div className="app-container">
-        <Navbar userName={userName} toggleSidebar={toggleSidebar} />
+        <Navbar userName={userName} toggleSidebar={toggleSidebar} isVisible={isSidebarVisible} />
         <Sidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
         <div className="main-content">
           <Routes>
