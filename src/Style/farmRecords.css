@@ -2,7 +2,7 @@
 
 /* Container styles */
 .farm-records-container {
-    max-width: 1050px;
+    max-width: 1200px;
     margin-left: 21%;
     padding: 10px;
   }
@@ -25,6 +25,8 @@
     display: grid;
     gap: 10px; /* Adjust spacing between elements */
     margin-bottom: 20px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    padding: 8px;
   }
   
   .form-label {
@@ -65,7 +67,7 @@
   }
   
   .form-button.update {
-    background-color: #007bff;
+    background-color: #408d5f;
   }
   
   .form-button.cancel {
@@ -120,7 +122,7 @@
   }
   
   .action-button.edit {
-    background-color: #007bff;
+    background-color: #408d5f;
   }
   
   .action-button.delete {

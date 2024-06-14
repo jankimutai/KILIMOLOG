@@ -2,7 +2,7 @@
 
 /* Container styles */
 .milk-records-container {
-  max-width: 1050px;
+  max-width: 1200px;
   margin-left: 21%;
   padding: 10px;
 }
@@ -18,95 +18,121 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  font-size: 18px;
 }
 
 .summary-item {
-  font-weight: bold;
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-/* Form container styles */
-.form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;  /* Adjust spacing between elements */
-  margin: 10px;  /* Add margin around the form */
-  padding: 10px;  /* Add padding inside the form */
-  border: 1px solid #ddd;  /* Add a border */
-  border-radius: 5px;  /* Rounded corners for the form */
+/* Form styles */
+.milk-records-container .form-container {
+  display: grid;
+  gap: 10px; /* Adjust spacing between elements */
+  margin-bottom: 20px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  padding: 10px;
 }
 
 .form-label {
   font-weight: bold;
-  margin-bottom: 5px;  /* Add space below the label */
 }
 
 .form-input {
-  padding: 5px;
-  border: 1px solid #ccc;  /* Border color for the input field */
-  border-radius: 3px;
+  padding: 8px;
+  width: calc(100% - 16px); /* Adjust input width */
+  border: 1px solid #ccc; /* Border color for the input field */
+  border-radius: 4px;
   font-size: 16px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #367750; /* Focus border color */
 }
 
 .form-button-container {
   display: flex;
-  gap: 10px;  /* Adjust spacing between buttons */
+  gap: 10px; /* Adjust spacing between buttons */
 }
 
 .form-button {
-  padding: 12px 24px;
+  flex: 1;
+  padding: 12px;
   background-color: #367750;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 100%; /* Ensures buttons fill the entire grid column */
   transition: background-color 0.3s ease;
 }
 
 .form-button.secondary {
-  background-color: #dc3545;
+  background-color: #ccc;
 }
 
 .form-button:hover {
   background-color: #2d6343;
 }
 
-/* Error message styles */
 .error-message {
   color: #dc3545;
   font-weight: bold;
   margin-top: 10px;
 }
 
-/* Calendar container styles */
+/* Calendar styles */
 .calendar-container {
   margin-top: 20px;
 }
 
-/* Toast styles */
-.toast-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-}
-
-.toast {
-  background-color: #2d6343;
-  color: #fff;
-  padding: 10px;
+/* FullCalendar styles */
+.fc .fc-daygrid-event {
+  cursor: pointer;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  color: white;
   border-radius: 4px;
-  margin-bottom: 10px;
 }
 
-/* Responsive styles */
+.fc .fc-daygrid-event:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.fc .fc-daygrid-event .fc-content {
+  white-space: nowrap;
+}
+
+/* Toast notifications */
+.Toastify__toast-container {
+  z-index: 999999; /* Ensure toast notifications are above other elements */
+  top: 20px;
+  right: 20px;
+}
+
+/* Responsive styles for small screens */
 @media (max-width: 768px) {
-  .form-container {
-    grid-template-columns: 1fr; /* Single column layout on smaller screens */
-  }
   .milk-records-container {
-    margin-left: 0
-    
+    margin: 0;
+  }
+  .summary {
+    flex-direction: column;
+  }
+
+  .summary-item {
+    margin-bottom: 10px;
+  }
+
+  .form-button-container {
+    flex-direction: column;
+  }
+
+  .form-button {
+    width: 100%;
   }
 }
