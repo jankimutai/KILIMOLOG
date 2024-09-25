@@ -1,0 +1,23 @@
+.breadcrumb {
+    margin: 20px 0; /* Add some margin */
+    font-size: 1.1rem; /* Font size for breadcrumb */
+  }
+  
+  .breadcrumb a {
+    text-decoration: none; /* Remove underline */
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  .breadcrumb span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px; /* Spacing between links */
+  }
+  .path-separator {
+    margin: 0 0.25rem;
+    font-weight: bold;
+  }
+  

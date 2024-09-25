@@ -18,7 +18,7 @@ const App = () => {
         <div className="main-content">
           <Routes>
           <Route path="/" element={<LandingPage />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} userName={userName} />
             <Route path="/farm-records" element={<FarmRecords />} />
             <Route path="/milk-records" element={<MilkRecords />} />
             <Route path="/settings" element={<Settings />} />

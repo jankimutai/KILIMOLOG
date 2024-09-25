@@ -7,9 +7,11 @@ import avatar1 from '../../Assets/avatar1.webp';
 const LandingPage = () => {
   return (
     <div className="landing-page">
+      <div className='hero-container'>
       <div className="hero-section">
         <div className="hero-content">
-        <h1 className="hero-title">Investing in Agriculture for a Sustainable Future</h1>
+        <h1 className="hero-title">KilimoLog</h1>
+        <p className="hero-paragraph">A comprehensive farm management application designed to simplify the process of recording and managing farm activities, offering intuitive tools for crop cultivation, livestock management, and agricultural operations.</p>
           <div className="quote-box">
             <img src={avatar1} alt="Andrew Flux" className="profile-image" />
             <div className="quote-content">
@@ -19,6 +21,9 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+        <button>Get Started</button>
+      </div>
+      
       </div>
       <div className="feature-section">
         <div className="feature-card">

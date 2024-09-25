@@ -7,15 +7,9 @@ import './navbar.css';
 
 function Navbar() {
   const [isNavVisible, setIsNavVisible] = useState(false);
-
-
   const toggleNav = () => {
     setIsNavVisible(!isNavVisible);
   };
-
-  
- 
-
   return (
     <nav className="navbar">
       <div className='logo'>

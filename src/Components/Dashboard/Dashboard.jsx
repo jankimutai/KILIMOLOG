@@ -1,28 +1,40 @@
 import React from 'react';
-import { FaTachometerAlt, FaTractor, FaGlassWhiskey } from 'react-icons/fa';
+import Breadcrumb from '../Breadcrumb/Breadcrumb'; // Import the Breadcrumb component
 import './dashboard.css';
-
+import { useNavigate } from 'react-router-dom';
+import { FaHome, FaTachometerAlt } from 'react-icons/fa';
 const Dashboard = () => {
+  const navigate = useNavigate();
+  const breadcrumbPaths = [
+    { name: 'Home', link: '/', icon: <FaHome /> },
+    { name: 'Dashboard', link: '/dashboard', icon: <FaTachometerAlt /> },
+  ];
+  // Handlers for button clicks
+  const handleViewMilkRecords = () => {
+    navigate("/milk-records");
+  };
+
+  const handleViewFarmRecords = () => {
+    navigate("/farm-records");
+  };
+
   return (
-    <div className="dashboard">
-      <div className="dashboard-cards">
-        <div className="dashboard-card">
-          <FaTachometerAlt className="dashboard-icon" />
-          <h2 className="dashboard-card-title">Overview</h2>
-          <p className="dashboard-card-description">Get an overview of your farm's performance.</p>
-        </div>
-        <div className="dashboard-card">
-          <FaTractor className="dashboard-icon" />
-          <h2 className="dashboard-card-title">Farm Records</h2>
-          <p className="dashboard-card-description">View and manage all farm records.</p>
-        </div>
-        <div className="dashboard-card">
-          <FaGlassWhiskey className="dashboard-icon" />
-          <h2 className="dashboard-card-title">Milk Records</h2>
-          <p className="dashboard-card-description">Track milk production and sales.</p>
-        </div>
+    <>
+      <Breadcrumb paths={breadcrumbPaths} />
+      <header className="dashboard-header">
+        <h1 className='dashboard-heading'>Farm Records Dashboard</h1> 
+      </header>
+
+      <div className="dashboard-buttons">
+        <button onClick={handleViewMilkRecords} className="dashboard-button">
+          View and Manage Milk Records
+        </button>
+        <button onClick={handleViewFarmRecords} className="dashboard-button">
+          View and Manage Farm Records
+        </button>
       </div>
-    </div>
+
+    </>
   );
 };
 

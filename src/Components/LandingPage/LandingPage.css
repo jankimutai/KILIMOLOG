@@ -1,29 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Anglebert&display=swap');
 .landing-page {
-    /* Basic styles for the landing page */
-    font-family: Arial, sans-serif; /* Set a default font */
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 15px;
   }
-  
-  .hero-section {
+  .hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 100%;
     height: 50vh;
     background: url('../../Assets/farm.webp') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
     text-align: center;
     padding: 20px;
   }
-  .hero-content {
-    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
+  
+  .hero-section {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay for text readability */
     padding: 30px;
     border-radius: 10px;
+    max-width: 800px;
   }
   
   .hero-title {
-    font-size: 2.5em; /* Large title size */
-    margin-bottom: 20px; /* Space below title */
+    font-family: 'Anglebert', cursive;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000,
+      2px 2px 0 #245039,
+      4px 4px 0 #45b7aa;
+    letter-spacing: 2px;
+    transform: rotate(-5deg);
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .hero-title::before {
+    content: 'KilimoLog';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: transparent;
+    -webkit-text-stroke: 2px #000;
+    z-index: -1;
+  }
+  
+  .hero-title::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: 
+      linear-gradient(45deg, transparent 49%, #ff6b6b 49%, #ff6b6b 51%, transparent 51%),
+      linear-gradient(-45deg, transparent 49%, #ff6b6b 49%, #ff6b6b 51%, transparent 51%);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    z-index: -2;
+  }
+
+  .hero-paragraph {
+    font-size: 1.2rem;
+    color: #ffffffc9;
+    line-height: 1.6;
+    margin-bottom: 30px;
   }
   
   .quote-box {
@@ -34,23 +82,49 @@
   }
   
   .profile-image {
-    width: 50px; /* Set profile image size */
-    height: 50px; /* Maintain aspect ratio */
-    border-radius: 50%; /* Circular image */
-    margin-right: 10px; /* Space between image and text */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
   }
   
   .quote-content {
     max-width: 600px; /* Limit quote content width */
+    text-align: left;
+    color: #fff;
   }
   
   .quote {
-    font-style: italic; /* Italic style for the quote */
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
   }
   
-  .author, .author-title {
-    margin: 0; /* Remove default margin */
-    font-weight: bold; /* Bold for author names */
+  .author {
+    font-weight: bold;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .author-title {
+    color: #a1a1a1;
+    margin: 0;
+  }
+  
+  .hero-section button {
+    margin-top: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 6px 18px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-section button:hover {
+    background-color: #45a049;
   }
   
   .feature-section {
@@ -87,15 +161,15 @@
     font-size: 1em; /* Responsive description size */
     color: #666; /* Gray color */
   }
-  
-  /* Media Queries for Responsive Design */
-  
   @media (max-width: 768px) {
-    .hero-section{
+    .hero-container{
         height: auto;
     }
     .hero-title {
-      font-size: 2em; /* Smaller title size for medium screens */
+        font-size: 3rem;
+    }
+    .hero-paragraph {
+        font-size:1em; /* Smaller description font size */
     }
     
     .feature-card {
@@ -113,23 +187,23 @@
   }
   
   @media (max-width: 480px) {
-    .hero-section{
+    .hero-container{
         height: auto;
     }
     .hero-title {
-      font-size: 1.5em; /* Even smaller title size for mobile */
-    }
-  
+        font-size: 2.8rem;
+      }
     .quote {
-      font-size: 0.9em; /* Smaller quote font size */
+      font-size: 1em; /* Smaller quote font size */
     }
   
     .feature-title {
       font-size: 1.2em; /* Smaller title size for feature cards */
     }
-  
+    .hero-paragraph {
+        font-size: 1em; /* Smaller description font size */
+    }
     .feature-description {
       font-size: 0.9em; /* Smaller description font size */
     }
   }
-  
