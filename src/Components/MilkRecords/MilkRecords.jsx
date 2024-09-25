@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Style/MilkRecords.css';
+import './MilkRecords.css';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { ToastContainer, toast } from 'react-toastify';

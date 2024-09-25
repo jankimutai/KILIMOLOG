@@ -1,5 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import '../Style/farmRecords.css';
+import React, { useState, useEffect, useMemo } from 'react';
+import {
+  useReactTable,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+  flexRender,
+} from '@tanstack/react-table';
+import './farmRecords.css';
 
 const FarmRecords = () => {
   const [farmRecords, setFarmRecords] = useState([]);
@@ -27,10 +35,55 @@ const FarmRecords = () => {
     ];
     setFarmRecords(dummyData);
   }, []);
-
   const getCurrentYear = () => {
     return new Date().getFullYear().toString();
   };
+
+
+  const columns = useMemo(
+    () => [
+      {
+        header: 'Date',
+        accessorKey: 'date',
+      },
+      {
+        header: 'Activity Type',
+        accessorKey: 'activityType',
+      },
+      {
+        header: 'Description',
+        accessorKey: 'description',
+      },
+      {
+        header: 'Estimated Cost (KES)',
+        accessorKey: 'estimatedCost',
+        cell: ({ row }) => `${row.original.estimatedCost} KES`,
+      },
+      {
+        header: 'Season',
+        accessorKey: 'season',
+      },
+      {
+        header: 'Actions',
+        cell: ({ row }) => (
+          <>
+            <button onClick={() => handleEditRecord(row.original)}>Edit</button>
+            <button onClick={() => handleDeleteRecord(row.original.id)}>Delete</button>
+          </>
+        ),
+      },
+    ],
+    []
+  );
+
+  const table = useReactTable({
+    data: farmRecords,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+  });
 
   const handleInputChange = (e) => {
     setNewRecord({ ...newRecord, [e.target.name]: e.target.value });
@@ -41,7 +94,7 @@ const FarmRecords = () => {
       setError('Please fill out all fields.');
       return;
     }
-    const newRecordWithId = { ...newRecord, id: Date.now(), season: getCurrentYear() }; // Set the season to the current year
+    const newRecordWithId = { ...newRecord, id: Date.now(), season: new Date().getFullYear().toString() };
     setFarmRecords([...farmRecords, newRecordWithId]);
     setNewRecord({ date: '', activityType: '', description: '', estimatedCost: '', season: '' });
     setError('');
@@ -49,7 +102,7 @@ const FarmRecords = () => {
 
   const handleEditRecord = (record) => {
     setEditingRecord(record);
-    setNewRecord({ ...record }); // Set the edit form with the current record data
+    setNewRecord({ ...record });
   };
 
   const handleUpdateRecord = () => {
@@ -77,7 +130,7 @@ const FarmRecords = () => {
     <div className="farm-records-container">
       <h2 className="title">Farm Records</h2>
       <div className="form-container">
-        <p className="form-description">
+      <p className="form-description">
           Enter details of your farm activities and costs to keep track of your farming seasons and expenses.
         </p>
         <label className="form-label" htmlFor="date">Date:</label>
@@ -148,43 +201,73 @@ const FarmRecords = () => {
         )}
         {error && <p className="error-message">{error}</p>}
       </div>
-      <p className="table-description">
-        This table displays your farm records including date, activity type, description, estimated cost, and season. You can edit or delete records as needed.
-      </p>
-      <table className="records-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Activity Type</th>
-            <th>Description</th>
-            <th>Estimated Cost (KES)</th>
-            <th>Season</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {farmRecords.length > 0 ? (
-            farmRecords.map((record) => (
-              <tr key={record.id}>
-                <td>{record.date}</td>
-                <td>{record.activityType}</td>
-                <td>{record.description}</td>
-                <td>{`${record.estimatedCost} KES`}</td>
-                <td>{record.season}</td>
-                <td>
-                  <button className="action-button edit" onClick={() => handleEditRecord(record)}>Edit</button>
-                  <button className="action-button delete" onClick={() => handleDeleteRecord(record.id)}>Delete</button>
-                </td>
+
+      {/* TanStack React Table */}
+      <div className="table-container">
+        <table>
+          <thead>
+            {table.getHeaderGroups().map(headerGroup => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map(header => (
+                  <th key={header.id} onClick={header.column.getToggleSortingHandler()}>
+                    {flexRender(header.column.columnDef.header, header.getContext())}
+                    {{
+                      asc: ' 🔼',
+                      desc: ' 🔽',
+                    }[header.column.getIsSorted()] ?? null}
+                  </th>
+                ))}
               </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="6" style={{ textAlign: 'center' }}>No records found.</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-      
+            ))}
+          </thead>
+          <tbody>
+            {table.getRowModel().rows.map(row => (
+              <tr key={row.id}>
+                {row.getVisibleCells().map(cell => (
+                  <td key={cell.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        
+        {/* Pagination */}
+        <div className="pagination">
+          <button
+            onClick={() => table.setPageIndex(0)}
+            disabled={!table.getCanPreviousPage()}
+          >
+            {'<<'}
+          </button>
+          <button
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            {'<'}
+          </button>
+          <span>
+            Page{' '}
+            <strong>
+              {table.getState().pagination.pageIndex + 1} of{' '}
+              {table.getPageCount()}
+            </strong>
+          </span>
+          <button
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            {'>'}
+          </button>
+          <button
+            onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+            disabled={!table.getCanNextPage()}
+          >
+            {'>>'}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

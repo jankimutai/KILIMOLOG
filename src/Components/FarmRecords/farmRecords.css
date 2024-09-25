@@ -1,0 +1,227 @@
+/* farmRecords.css */
+
+/* Container styles */
+.farm-records-container {
+    max-width: 1200px;
+    margin-left: 21%;
+    padding: 10px;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form Styles */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .form-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-input:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  .form-button {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-button:hover {
+    background-color: #45a049;
+  }
+  
+  .update {
+    background-color: #2196f3;
+  }
+  
+  .update:hover {
+    background-color: #1976d2;
+  }
+  
+  .cancel {
+    background-color: #f44336;
+  }
+  
+  .cancel:hover {
+    background-color: #d32f2f;
+  }
+  
+  .error-message {
+    color: #f44336;
+    font-weight: bold;
+  }
+  
+  /* Table Styles */
+  .table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  th:hover {
+    background-color: #f9f9f9;
+  }
+  
+  td {
+    color: #555;
+  }
+  
+  button {
+    padding: 6px 10px;
+    margin-right: 5px;
+    font-size: 0.9rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Pagination Styles */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination span {
+    padding: 5px;
+    font-weight: bold;
+  }
+  @media screen and (max-width: 1200px) {
+    .farm-records-container {
+      margin-left: 15%;
+    }
+  }
+  
+  /* Media Query for tablets (max-width: 768px) */
+  @media screen and (max-width: 768px) {
+    .farm-records-container {
+      margin-left: 10%;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .form-container {
+      gap: 10px;
+    }
+  
+    .form-input {
+      padding: 6px 10px;
+      font-size: 0.9rem;
+    }
+  
+    table {
+      font-size: 0.9rem;
+    }
+  
+    th, td {
+      padding: 8px;
+    }
+  }
+  
+  /* Media Query for mobile devices (max-width: 480px) */
+  @media screen and (max-width: 480px) {
+    .farm-records-container {
+      margin-left: 0;
+      padding: 5px;
+    }
+  
+    .title {
+      font-size: 1.2rem;
+    }
+  
+    .form-container {
+      gap: 8px;
+    }
+  
+    .form-input {
+      padding: 4px 8px;
+      font-size: 0.8rem;
+    }
+  
+    .form-button {
+      padding: 8px 10px;
+      font-size: 0.9rem;
+    }
+  
+    table {
+      font-size: 0.8rem;
+    }
+  
+    th, td {
+      padding: 6px;
+    }
+  
+    button {
+      padding: 4px 8px;
+    }
+  
+    .pagination {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .pagination button {
+      width: 100%;
+    }
+  }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaCog } from 'react-icons/fa';
-import '../Style/settings.css';
+import './settings.css';
 
 const Settings = () => {
 

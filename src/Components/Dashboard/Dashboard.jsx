@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaTachometerAlt, FaTractor, FaGlassWhiskey } from 'react-icons/fa';
-import '../Style/dashboard.css';
+import './dashboard.css';
 
 const Dashboard = () => {
   return (
