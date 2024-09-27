@@ -4,12 +4,17 @@ import corn from '../../Assets/corn.webp';
 import wheat3 from '../../Assets/wheat3.webp';
 import sunflower from '../../Assets/sunflower.webp';
 import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar/Navbar';
 const LandingPage = () => {
   const navigate = useNavigate()
   function handleClick(){
     navigate("/dashboard")
   }
   return (
+  <>  
+    <Navbar />
+  
+  
     <div className="landing-page">
       <div className='hero-container'>
       <div className="hero-section">
@@ -54,6 +59,7 @@ const LandingPage = () => {
         
       </div>
     </div>
+    </>
   );
 };
 

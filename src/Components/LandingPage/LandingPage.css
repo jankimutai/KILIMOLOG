@@ -3,7 +3,6 @@
 .landing-page {
     font-family: Arial, sans-serif;
     margin: 0 auto;
-    padding: 15px;
   }
   .hero-container {
     display: flex;
@@ -11,7 +10,7 @@
     align-items: center;
     position: relative;
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     background: url('../../Assets/farm.webp') no-repeat center center/cover;
     color: white;
     text-align: center;
