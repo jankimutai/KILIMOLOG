@@ -1,265 +1,228 @@
+/* LandingPage.css */
 @import url('https://fonts.googleapis.com/css2?family=Anglebert&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 .landing-page {
-    font-family: Arial, sans-serif;
-    margin: 0 auto;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #141414;; /* Dark background */
+  color: #f8f9fa; /* Light text color */
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: row; /* Align items side by side */
+  align-items: stretch; /* Stretch items to fill container */
+  justify-content: center; /* Center align items */
+  width: 100%; /* Full width */
+  flex-grow: 1; /* Allow hero container to grow and fill space */
+}
+
+.hero-image {
+  flex: 1; /* Take up half of the space */
+}
+
+.hero-image img {
+  width: 100%; /* Make image responsive */
+  height: 100%; /* Ensure the image fills the container */
+  object-fit: cover; /* Cover the entire area without distortion */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow effect for dark mode */
+}
+
+.hero-section {
+  flex: 1; /* Take up the other half of the space */
+  margin: 0 10px; /* Margin to separate from the image */
+  text-align: left; /* Align text to the left */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center;
+  align-items: center; /* Center content vertically */
+  padding: 3rem;
+  text-align: center;
+}
+
+.hero-title {
+  
+  font-family: 'Anglebert';
+  font-size: 3.9rem;
+  color: #fff;
+  text-shadow: 
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    2px 2px 0 #245039,
+    4px 4px 0 #45b7aa;
+  letter-spacing: 2px;
+  transform: rotate(-3deg);
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+.hero-title::before {
+  content: 'KilimoLog';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: transparent;
+  -webkit-text-stroke: 3px #000;
+  z-index: -1;
+}
+
+
+
+.hero-paragraph {
+  font-size: clamp(1.1rem, 4vw, 1.1rem);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 800px; /* Space above the paragraph */
+}
+
+.get-in-touch {
+  margin-top: 30px; /* Space above the button and icon */
+}
+
+.learn_more {
+  background-color: #007bff; /* Button background */
+  color: #ffffff; /* Button text color */
+  padding: 0.6rem 1rem; /* Padding for button */
+  border-radius: 9px; /* Rounded corners */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.learn_more:hover {
+  background-color: #0097ef; /* Darker green on hover */
+}
+
+.box-container {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+}
+.arrow-icon {
+  position: absolute;
+  right: -50px;
+  width: 70px;
+}
+
+.arrow-icon svg {
+  fill: #805ad5;
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  font-size: 1.3rem;
+  position: absolute;
+  right: -85px;
+  top: -40px;
+  transform: rotate(12deg);
+  font-family: 'Caveat', cursive;
+}
+
+
+
+.text {
+  font-size: 1.3rem;
+  position: absolute;
+  right: -85px;
+  top: -40px;
+  transform: rotate(12deg);
+  font-family: 'Caveat', cursive;
+}
+
+.text:hover {
+  color: #1a73e8; /* Change color on hover */
+}
+
+/* Media Queries for Responsive Design */
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
   .hero-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url('../../Assets/farm.webp') no-repeat center center/cover;
-    color: white;
-    text-align: center;
-    padding: 20px;
+    flex-direction: column-reverse; /* Stack items vertically */
+    height: auto; /* Reset height for mobile */
   }
-  
+
+  .hero-image,
   .hero-section {
-    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for text readability */
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 800px;
+    flex: 0 0 50%; /* Set both to take up 50% of the height */
+    width: 100%; /* Full width */
+    margin: 0; /* Reset margin */
   }
-  
+
   .hero-title {
-    font-family: 'Anglebert';
-    font-size: 3.9rem;
-    color: #fff;
-    text-shadow: 
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000,
-      2px 2px 0 #245039,
-      4px 4px 0 #45b7aa;
-    letter-spacing: 2px;
-    transform: rotate(-3deg);
-    margin-bottom: 30px;
-    position: relative;
-    display: inline-block;
+    font-size: 2rem; /* Smaller title on mobile */
   }
-  
-  .hero-title::before {
-    content: 'KilimoLog';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: transparent;
-    -webkit-text-stroke: 3px #000;
-    z-index: -1;
-  }
-  
-  .hero-title::after {
-    content: '';
-    position: absolute;
-    left: -10px;
-    top: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: 
-      linear-gradient(45deg, transparent 49%, #ff6b6b 49%, #ff6b6b 51%, transparent 51%),
-      linear-gradient(-45deg, transparent 49%, #ff6b6b 49%, #ff6b6b 51%, transparent 51%);
-    background-size: 20px 20px;
-    opacity: 0.1;
-    z-index: -2;
-  }
-  
 
   .hero-paragraph {
-    color: #d8d8d8;
-    font-size: clamp(1.1rem, 4vw, 1.2rem);
-    font-weight: 500;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    font-size: 1rem; /* Smaller paragraph text on mobile */
   }
-  
-  .quote-box {
-    display: flex; /* Use flexbox for quote layout */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    margin-top: 20px; /* Space above quote box */
-  }
-  
-  .profile-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
-  
-  .quote-content {
-    max-width: 600px; /* Limit quote content width */
-    text-align: center;
-    color: #ffffffc9;
-  }
-  
-  .quote {
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-  }
-  
-  .author {
-    font-weight: bold;
-    margin: 0;
-    text-align: center;
-  }
-  
-  .author-title {
-    color: #a1a1a1;
-    margin: 0;
-  }
+
   .learn_more {
-    background-color: #3caa71;
-    color: #fff;
-    cursor: default;
-    display: inline-block;
-    padding:8px 24px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-top: 10px;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
   }
+
   .box-container {
-    position: relative;
-    display: inline-block;
-    margin-left: 20px;
+    margin-left: 10px;
   }
+
   .arrow-icon {
-    position: absolute;
-    right: -50px;
-    width: 70px;
+    right: -46px;
+    width: 60px;
   }
-  
-  .arrow-icon svg {
-    fill: #805ad5;
-    width: 100%;
-    height: auto;
-  }
-  
+
   .text {
-    font-size: 1.3rem;
-    position: absolute;
-    right: -85px;
-    top: -40px;
-    transform: rotate(12deg);
-    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    right: -60px;
+    top: -30px;
   }
-  
-  
-  
-  .feature-section {
-    display: flex; /* Flexbox for feature cards */
-    flex-wrap: wrap; /* Allow wrapping */
-    justify-content: space-around; /* Distribute space */
-    padding: 20px; /* Spacing for the feature section */
-  }
-  
-  .feature-card {
-    flex: 1 1 300px; /* Responsive card sizes */
-    margin: 10px; /* Space between cards */
-    background-color: #fff; /* Background for cards */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center; /* Center text */
-    padding: 15px; /* Inner padding */
-  }
-  
-  .feature-image {
-    width: 100%;/* Full width for images */
-    height: auto;
-    max-height: 300px;
-    object-fit: contain;
-    border-radius: 4px; /* Slightly rounded corners */
-  }
-  
-  .feature-title {
-    font-size: 1.5em; /* Responsive title size */
-    margin: 10px 0; /* Space around title */
-  }
-  
-  .feature-description {
-    font-size: 1em; /* Responsive description size */
-    color: #666; /* Gray color */
-  }
-  @media (min-width: 481px) and (max-width: 767px) {
-    .hero-container{
-        height: auto;
-    }
-    .hero-title {
-        font-size: 2.7rem;
-    }
-    .hero-paragraph {
-      font-size: 16px;
-    }
-    .learn_more {
-      font-size: clamp(0.9rem, 3vw, 1.1rem);
-    }
-  
-    .box-container {
-      margin-left: 10px;
-    }
-  
-    .arrow-icon {
-      right: -46px;
-      width: 60px;
-    }
-  
-    .text {
-      font-size: 1.1rem;
-      right: -60px;
-      top: -30px;
-    }
-    
-    .feature-card {
-      flex: 1 1 100%; /* Full width cards for small screens */
-    }
-  
-    
-  }
-  
-  @media (max-width: 480px) {
-    .hero-container{
-        height: auto;
-    }
-    .hero-title {
-        font-size: 2.3rem;
-      }
-    
-  
-    .feature-title {
-      font-size: 1.2em; /* Smaller title size for feature cards */
-    }
-    .hero-paragraph {
-      font-size: 16px;
-    }
-    .feature-description {
-      font-size: 0.9em; /* Smaller description font size */
-    }
-    .learn_more {
-      font-size: clamp(0.9rem, 3vw, 1.1rem);
-    }
-  
-    .box-container {
-      margin-left: 10px;
-    }
-  
-    .arrow-icon {
-      right: -46px;
-      width: 60px;
-    }
-  
-    .text {
-      font-size: 1.1rem;
-      right: -60px;
-      top: -30px;
-    }
+}
+@media screen and (min-width: 769px) and (max-width: 1030px) {
+  .hero-container {
+    flex-direction: column-reverse; /* Stack items vertically */
+    height: auto; /* Reset height for mobile */
   }
 
+  .hero-image,
+  .hero-section {
+    flex: 0 0 50%; /* Set both to take up 50% of the height */
+    width: 100%; /* Full width */
+    margin: 0; /* Reset margin */
+  }
+
+  .hero-title {
+    font-size: 2rem; /* Smaller title on mobile */
+  }
+
+  .hero-paragraph {
+    font-size: 1rem; /* Smaller paragraph text on mobile */
+  }
+
+  .learn_more {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+
+  .box-container {
+    margin-left: 10px;
+  }
+
+  .arrow-icon {
+    right: -46px;
+    width: 60px;
+  }
+
+  .text {
+    font-size: 1.1rem;
+    right: -60px;
+    top: -30px;
+  }
+}
 
 
-  

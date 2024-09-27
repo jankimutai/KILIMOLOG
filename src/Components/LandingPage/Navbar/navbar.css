@@ -90,8 +90,13 @@
   .get-started {
     background-color: #007bff; /* Button background */
     color: #ffffff; /* Button text color */
-    padding: 0.5rem 1rem; /* Padding for button */
-    border-radius: 5px; /* Rounded corners */
+    padding: 0.6rem 1rem; /* Padding for button */
+    border-radius: 9px; /* Rounded corners */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+    align-items: center;
   }
   
   /* Media Queries for Responsive Design */

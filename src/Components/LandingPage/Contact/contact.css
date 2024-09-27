@@ -1,0 +1,154 @@
+/* Contact Component Styles */
+.contact-container {
+    background-color: #171717; /* Updated background color */
+    color: #e2e8f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-content {
+    display: flex;
+    background-color: #131313; /* Slightly darker than before */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    width: 100%;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 2rem;
+    background-color: #171717; /* Same color */
+}
+
+.contact-title {
+    color: #007bff; /* Same as before */
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+}
+
+.contact-description {
+    color: #c5d1e1; /* Slightly muted text */
+    line-height: 1.6;
+}
+
+.illustration {
+    max-width: 100%;
+    height: auto;
+}
+
+.contact-svg {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+
+.contact-form {
+    margin: auto;
+    flex: 1;
+    padding: 2rem;
+   
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input,
+.form-textarea {
+    border:none;
+    margin-bottom: 1.2rem;
+    padding: 0.9rem;
+    border-radius: 6px;
+    background-color: #171717; /* Slightly darker input background */
+    color: #e2e8f0;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.contact-button {
+    padding: 0.9rem;
+    background-color: #007bff;
+    color: #0f172a;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-button:hover {
+    background-color: #0ea5e9;
+    transform: translateY(-2px);
+}
+
+/* SVG styles */
+.contact-svg rect[fill="#1a202c"] {
+    fill: #171717; /* Same color */
+}
+
+.contact-svg rect[fill="#fff"] {
+    fill: #121212; /* Same color */
+}
+
+.contact-svg path[fill="#CBD5E0"] {
+    fill: #121212;
+}
+
+.contact-svg circle[fill="#4299E1"] {
+    fill: #38bdf8;
+}
+
+.contact-svg circle[fill="#48BB78"] {
+    fill: #34d399;
+}
+
+.contact-svg circle[fill="#F56565"] {
+    fill: #f87171;
+}
+
+.contact-svg path[fill="#EDF2F7"] {
+    fill: #141414;
+}
+
+.contact-svg path[stroke="#A0AEC0"] {
+    stroke: #007bff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 2rem;
+    }
+
+    .contact-title {
+        font-size: 1.8rem;
+    }
+}
