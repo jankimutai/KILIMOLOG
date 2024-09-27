@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Anglebert&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 .landing-page {
     font-family: Arial, sans-serif;
     margin: 0 auto;
@@ -18,15 +19,15 @@
   }
   
   .hero-section {
-    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay for text readability */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for text readability */
     padding: 30px;
     border-radius: 10px;
     max-width: 800px;
   }
   
   .hero-title {
-    font-family: 'Anglebert', cursive;
-    font-size: 3.5rem;
+    font-family: 'Anglebert';
+    font-size: 3.9rem;
     color: #fff;
     text-shadow: 
       -1px -1px 0 #000,
@@ -36,7 +37,7 @@
       2px 2px 0 #245039,
       4px 4px 0 #45b7aa;
     letter-spacing: 2px;
-    transform: rotate(-5deg);
+    transform: rotate(-3deg);
     margin-bottom: 30px;
     position: relative;
     display: inline-block;
@@ -48,7 +49,7 @@
     left: 0;
     top: 0;
     color: transparent;
-    -webkit-text-stroke: 2px #000;
+    -webkit-text-stroke: 3px #000;
     z-index: -1;
   }
   
@@ -66,12 +67,14 @@
     opacity: 0.1;
     z-index: -2;
   }
+  
 
   .hero-paragraph {
-    font-size: 1.2rem;
-    color: #ffffffc9;
+    color: #d8d8d8;
+    font-size: clamp(1.1rem, 4vw, 1.2rem);
+    font-weight: 500;
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .quote-box {
@@ -90,8 +93,8 @@
   
   .quote-content {
     max-width: 600px; /* Limit quote content width */
-    text-align: left;
-    color: #fff;
+    text-align: center;
+    color: #ffffffc9;
   }
   
   .quote {
@@ -103,29 +106,52 @@
   .author {
     font-weight: bold;
     margin: 0;
-    text-align: left;
+    text-align: center;
   }
   
   .author-title {
     color: #a1a1a1;
     margin: 0;
   }
-  
-  .hero-section button {
-    margin-top: 1rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 6px 18px;
+  .learn_more {
+    background-color: #3caa71;
+    color: #fff;
+    cursor: default;
+    display: inline-block;
+    padding:8px 24px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
     font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  .box-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+  }
+  .arrow-icon {
+    position: absolute;
+    right: -50px;
+    width: 70px;
   }
   
-  .hero-section button:hover {
-    background-color: #45a049;
+  .arrow-icon svg {
+    fill: #805ad5;
+    width: 100%;
+    height: auto;
   }
+  
+  .text {
+    font-size: 1.3rem;
+    position: absolute;
+    right: -85px;
+    top: -40px;
+    transform: rotate(12deg);
+    font-family: 'Caveat', cursive;
+  }
+  
+  
   
   .feature-section {
     display: flex; /* Flexbox for feature cards */
@@ -145,7 +171,7 @@
   }
   
   .feature-image {
-    width: 100%; /* Full width for images */
+    width: 100%;/* Full width for images */
     height: auto;
     max-height: 300px;
     object-fit: contain;
@@ -161,29 +187,40 @@
     font-size: 1em; /* Responsive description size */
     color: #666; /* Gray color */
   }
-  @media (max-width: 768px) {
+  @media (min-width: 481px) and (max-width: 767px) {
     .hero-container{
         height: auto;
     }
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.7rem;
     }
     .hero-paragraph {
-        font-size:1em; /* Smaller description font size */
+      font-size: 16px;
+    }
+    .learn_more {
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+    }
+  
+    .box-container {
+      margin-left: 10px;
+    }
+  
+    .arrow-icon {
+      right: -46px;
+      width: 60px;
+    }
+  
+    .text {
+      font-size: 1.1rem;
+      right: -60px;
+      top: -30px;
     }
     
     .feature-card {
       flex: 1 1 100%; /* Full width cards for small screens */
     }
   
-    .quote-box {
-      flex-direction: column; /* Stack image and text vertically */
-      align-items: center; /* Center items */
-    }
-  
-    .profile-image {
-      margin-bottom: 10px; /* Space below image */
-    }
+    
   }
   
   @media (max-width: 480px) {
@@ -191,19 +228,39 @@
         height: auto;
     }
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.3rem;
       }
-    .quote {
-      font-size: 1em; /* Smaller quote font size */
-    }
+    
   
     .feature-title {
       font-size: 1.2em; /* Smaller title size for feature cards */
     }
     .hero-paragraph {
-        font-size: 1em; /* Smaller description font size */
+      font-size: 16px;
     }
     .feature-description {
       font-size: 0.9em; /* Smaller description font size */
     }
+    .learn_more {
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+    }
+  
+    .box-container {
+      margin-left: 10px;
+    }
+  
+    .arrow-icon {
+      right: -46px;
+      width: 60px;
+    }
+  
+    .text {
+      font-size: 1.1rem;
+      right: -60px;
+      top: -30px;
+    }
   }
+
+
+
+  

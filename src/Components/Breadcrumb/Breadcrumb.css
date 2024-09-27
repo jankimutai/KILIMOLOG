@@ -1,23 +1,52 @@
-.breadcrumb {
-    margin: 20px 0; /* Add some margin */
-    font-size: 1.1rem; /* Font size for breadcrumb */
-  }
-  
-  .breadcrumb a {
-    text-decoration: none; /* Remove underline */
-    font-weight: 500;
-    font-size: 1.2rem;
-    color: #333;
-  }
 
-  .breadcrumb span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3px; /* Spacing between links */
+/* Breadcrumb.css */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px 0;
+  
+}
+.breadcrumb a{
+  text-decoration: none;
+}
+
+.breadcrumb span {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb .path-icon {
+  margin-right: 5px;
+  font-size: 16px;
+  color: #4CAF50; /* Green color for icons */
+}
+
+.breadcrumb .path-name {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb .path-name:hover {
+  text-decoration: underline;
+  color: #2196F3; /* Hover effect with blue text */
+}
+
+.breadcrumb .path-separator {
+  margin: 0 5px;
+  color: #999; /* Light gray for separator */
+}
+
+@media (max-width: 768px) {
+  .breadcrumb {
+    font-size: 12px;
   }
-  .path-separator {
-    margin: 0 0.25rem;
-    font-weight: bold;
+  .breadcrumb .path-icon {
+    font-size: 14px;
   }
+}
+
+
   

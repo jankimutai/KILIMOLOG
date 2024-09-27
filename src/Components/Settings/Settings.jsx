@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaCog } from 'react-icons/fa';
 import './settings.css';
 
 const Settings = () => {
@@ -17,10 +16,9 @@ const Settings = () => {
   return (
     <div className="settings">
       <div className="settings-header">
-        <FaCog className="settings-icon" />
         <h2 className="settings-title">Settings</h2>
       </div>
-      <div>
+      <div className='settings-container'>
         <h3 className="section-title">Account Settings</h3>
         <div className="setting-item">
           <label className="setting-label">Change Password:</label>

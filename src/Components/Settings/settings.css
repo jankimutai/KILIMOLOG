@@ -1,87 +1,86 @@
-.settings {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 70%; /* Adjust width as needed */
-  margin-left: 20%; /* Adjust margin-left to push it beside the sidebar */
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  margin-top: 20px;
-}
-
-.settings-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.settings-icon {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-}
-
-.settings-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.section-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.setting-item {
-  margin-bottom: 1.5rem;
-}
-
-.setting-label {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.setting-input {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  box-sizing: border-box;
-}
-
-.setting-button,
-.delete-account {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.setting-button{
-  margin-top: 10px;
-}
-.setting-button:hover,
-.delete-account:hover {
-  background-color: #3e8e41;
-}
-
-.delete-account {
-  background-color: #e74c3c;
-}
-
-.delete-account:hover {
-  background-color: #c0392b;
-}
-
-/* For mobile phones and small tablets */
-@media only screen and (max-width: 767px) {
+/* settings.css */
   .settings {
-    width: 80%;
-    margin: 0 auto; /* Move it to the edge */
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    height:83vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+   
   }
-}
+  .settings-container{
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+  .settings-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .settings-title {
+    font-size: 2rem;
+    color: #333; /* Dark color for the title */
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
+    color: #007bff; /* Primary color for section titles */
+  }
+  
+  .setting-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .setting-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #555; /* Slightly lighter color for labels */
+  }
+  
+  .setting-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    transition: border-color 0.3s ease; /* Transition effect for input border */
+  }
+  
+  .setting-input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove outline */
+  }
+  
+  .setting-button, .delete-account {
+    padding: 0.5rem 1rem;
+    background-color: #28a745; /* Green background for change password button */
+    color: #ffffff; /* White text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transition effect for button */
+  }
+  
+  .setting-button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  .delete-account {
+    background-color: #dc3545; /* Red background for delete account button */
+    margin-top: 0.5rem;
+  }
+  
+  .delete-account:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
+  @media (max-width: 768px) {
+    .settings {
+        height: auto;
+    }
+  }

@@ -1,0 +1,264 @@
+/* General styles */
+.farm-records-container {
+    margin: 0 auto;
+    height: 83vh;
+    padding: 20px;
+    width: 100%;
+    
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  /* Form styles */
+  .toggle-form-button {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .form-description {
+    margin-bottom: 15px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  /* Table styles */
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .farm-records-table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .farm-records-table th,
+  .farm-records-table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+  }
+  
+  .farm-records-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .farm-records-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .farm-records-table tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Action buttons */
+  .action-button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .edit-button {
+    background-color: #FFA500;
+    color: white;
+  }
+  
+  .delete-button {
+    background-color: #FF0000;
+    color: white;
+  }
+  
+  /* Pagination styles */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination-button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .pagination-button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .pagination-info {
+    margin: 0 10px;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .farm-records-table {
+      font-size: 14px;
+    }
+  
+    .farm-records-table th,
+    .farm-records-table td {
+      padding: 8px;
+    }
+  
+    .action-button {
+      padding: 3px 6px;
+      font-size: 12px;
+    }
+  
+    .form-container {
+      padding: 15px;
+      width: 90%;
+    }
+  
+    .form-description {
+      font-size: 14px;
+    }
+  
+    .form-label {
+      font-size: 14px;
+    }
+  
+    .form-input {
+      padding: 6px;
+      font-size: 14px;
+    }
+  
+    .form-button {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .farm-records-table {
+      font-size: 12px;
+    }
+  
+    .farm-records-table th,
+    .farm-records-table td {
+      padding: 6px;
+    }
+  
+    .action-button {
+      padding: 2px 4px;
+      font-size: 10px;
+    }
+  
+    .pagination-button {
+      padding: 3px 6px;
+      font-size: 12px;
+    }
+  
+    .form-container {
+      padding: 10px;
+      width: 90%;
+      max-height: 95vh;
+    }
+  
+    .form-description {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+  
+    .form-label {
+      font-size: 12px;
+      margin-top: 8px;
+    }
+  
+    .form-input {
+      padding: 5px;
+      font-size: 12px;
+    }
+  
+    .form-button {
+      padding: 7px;
+      font-size: 12px;
+      margin-top: 15px;
+    }
+  
+    .close-button {
+      top: 5px;
+      right: 5px;
+      font-size: 16px;
+    }
+  }
