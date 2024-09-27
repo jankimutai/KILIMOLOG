@@ -1,6 +1,6 @@
-// NavBar.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll'; // Import ScrollLink from react-scroll
 import './navbar.css';
 
 const NavBar = () => {
@@ -12,26 +12,62 @@ const NavBar = () => {
 
   return (
     <nav className="landing-navbar">
-    <button
+      <button
         className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
         onClick={toggleMenu}
       >
-      <span className="bar"></span>
-      <span className="bar"></span>
-      <span className="bar"></span>
-    </button>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
       <ul className={`topnav-list ${isMenuOpen ? 'open' : ''}`}>
         <li>
-          <Link to="/" className="top-nav-link">Home</Link>
+          <ScrollLink
+            to="home-section" // The id of the Home section
+            spy={true} 
+            smooth={true} 
+            offset={-70} 
+            duration={200}
+            className="top-nav-link"
+            onClick={() => setIsMenuOpen(false)} // Close the menu on click
+          >
+            Home
+          </ScrollLink>
         </li>
         <li>
-          <Link to="/about" className="top-nav-link">About</Link>
+          <ScrollLink
+            to="about-section" // The id of the About section
+            spy={true} 
+            smooth={true} 
+            offset={-70} 
+            duration={200}
+            className="top-nav-link"
+            onClick={() => setIsMenuOpen(false)} // Close the menu on click
+          >
+            About
+          </ScrollLink>
         </li>
         <li>
-          <Link to="/contact" className="top-nav-link">Contact</Link>
+          <ScrollLink
+            to="contact-section" // The id of the Contact section
+            spy={true} 
+            smooth={true} 
+            offset={-70} 
+            duration={200}
+            className="top-nav-link"
+            onClick={() => setIsMenuOpen(false)} // Close the menu on click
+          >
+            Contact
+          </ScrollLink>
         </li>
         <li>
-          <Link to="/dashboard" className="top-nav-link get-started">Get Started</Link>
+          <Link
+            to="/dashboard"
+            className="top-nav-link get-started"
+            onClick={() => setIsMenuOpen(false)} // Close the menu on click
+          >
+            Get Started
+          </Link>
         </li>
       </ul>
     </nav>

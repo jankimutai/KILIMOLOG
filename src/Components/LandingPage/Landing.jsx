@@ -16,8 +16,8 @@ const LandingPage = () => {
   return (
     <>  
       <Navbar />
-      <div className="landing-page">
-        <div className='hero-container'>
+      <div  className="landing-page">
+        <div id="home-section" className='hero-container'>
           <div className="hero-image">
             <img src={corn} alt="Farming" />
           </div>
@@ -43,8 +43,13 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <About />
-      <Contact />
+      <div id="about-section"> 
+          <About />
+        </div>
+
+        <div id="contact-section">
+          <Contact />
+        </div>
     </>
   );
 };
