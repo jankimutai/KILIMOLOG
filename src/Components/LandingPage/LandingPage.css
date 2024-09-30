@@ -1,33 +1,42 @@
 /* LandingPage.css */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 
 .landing-page {
   background: linear-gradient(to right, rgba(128, 128, 128, 0.04) 1px, transparent 1px),
               linear-gradient(to bottom, rgba(128, 128, 128, 0.04) 1px, transparent 1px);
-  background-size: 20px 30px;
+  background-size: 10px 20px;
   box-sizing: border-box;
-  background-color: #121212;
-  color: #ffffff;
+  background-color: #141414;
+  color: #e0e0e0;
   padding: 2rem 0;
+  
 }
 
 .hero-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
   height: 72vh;
   width: 70%;
   margin: 0 auto;
   padding: 0 3rem;
 }
 
+
 .hero-player {
   flex: 1;
-  max-width: 390px;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.hero-player .react-loading-skeleton {
+  height: 300px;
+  width: 300px;
+  border-radius: 8px; /* Make it resemble the Lottie image container */
+}
 .hero-section {
   flex: 2;
   display: flex;
@@ -36,6 +45,8 @@
   align-items: center;
   text-align: center;
 }
+
+
 
 .hero-title {
   font-family: 'Dancing Script';
@@ -55,18 +66,11 @@
   display: inline-block;
 }
 
-.hero-title::before {
-  content: 'KilimoLog';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: transparent;
-  -webkit-text-stroke: 2px #000;
-  z-index: -1;
-}
+
 
 .hero-paragraph {
   font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .get-in-touch {
@@ -119,14 +123,16 @@
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .hero-container {
-    width: 90%;
     flex-direction: column;
-    padding: 2rem;
-    height: auto;
+    text-align: center;
   }
 
-  .hero-player {
-    max-width: 250px;
+  .hero-player, .hero-section {
+    max-width: 100%;
+  }
+  .get-in-touch {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .hero-title {

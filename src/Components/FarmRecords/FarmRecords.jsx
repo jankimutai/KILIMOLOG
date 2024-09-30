@@ -56,36 +56,6 @@ const FarmRecords = () => {
   const getCurrentYear = () => {
     return new Date().getFullYear().toString();
   };
-
-  const columns = useMemo(
-    () => [
-      { header: 'Date', accessorKey: 'date' },
-      { header: 'Activity Type', accessorKey: 'activityType' },
-      { header: 'Description', accessorKey: 'description' },
-      { header: 'Estimated Cost (KES)', accessorKey: 'estimatedCost', cell: ({ row }) => `${row.original.estimatedCost} KES` },
-      { header: 'Season', accessorKey: 'season' },
-      {
-        header: 'Actions',
-        cell: ({ row }) => (
-          <>
-            <button className='action-button edit-button' onClick={() => handleEditRecord(row.original)}>Edit</button>
-            <button className='action-button delete-button' onClick={() => handleDeleteRecord(row.original.id)}>Delete</button>
-          </>
-        ),
-      },
-    ],
-    []
-  );
-
-  const table = useReactTable({
-    data: farmRecords,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-  });
-
   const handleInputChange = (e) => {
     setNewRecord({ ...newRecord, [e.target.name]: e.target.value });
   };
@@ -130,6 +100,37 @@ const FarmRecords = () => {
     setError('');
   };
 
+  const columns = useMemo(
+    () => [
+      { header: 'Date', accessorKey: 'date' },
+      { header: 'Activity Type', accessorKey: 'activityType' },
+      { header: 'Description', accessorKey: 'description' },
+      { header: 'Estimated Cost (KES)', accessorKey: 'estimatedCost', cell: ({ row }) => `${row.original.estimatedCost} KES` },
+      { header: 'Season', accessorKey: 'season' },
+      {
+        header: 'Actions',
+        cell: ({ row }) => (
+          <>
+            <button className='action-button edit-button' onClick={() => handleEditRecord(row.original)}>Edit</button>
+            <button className='action-button delete-button' onClick={() => handleDeleteRecord(row.original.id)}>Delete</button>
+          </>
+        ),
+      },
+    ],
+    [handleDeleteRecord] // Add handleDeleteRecord to the dependency array
+  );
+  
+
+  const table = useReactTable({
+    data: farmRecords,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+  });
+
+  
   return (
     <div className="farm-records-container">
       <h2 className="title">Farm Records</h2>

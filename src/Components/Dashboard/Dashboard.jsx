@@ -77,7 +77,8 @@ const Dashboard = ({userName}) => {
     </nav>
     <div className="dashboard-content">
         <Sidebar 
-          setActivePage={handleSetActivePage} 
+          setActivePage={handleSetActivePage}
+          activePage={activePage}
           isOpen={isOpen}
           closeSidebar={closeSidebar}
         />

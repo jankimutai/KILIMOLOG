@@ -5,7 +5,6 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
 import { ToastContainer, toast } from 'react-toastify';
-import { AiOutlineClose } from 'react-icons/ai';
 import 'react-toastify/dist/ReactToastify.css';
 import './MilkRecords.css'; // External CSS
 import { AiOutlineCalendar } from 'react-icons/ai';
