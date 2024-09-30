@@ -165,7 +165,37 @@
         font-size: 0.9rem; /* Decrease font size */
     }
 }
+@media screen and (min-width: 768px) and (max-width: 1030px) {
+    .contact-content {
+        flex-direction: column; /* Stack elements vertically */
+        width: 90%; /* Increase width on smaller screens */
+    }
 
+    .contact-info,
+    .contact-form {
+        padding: 1rem;
+    }
+    .contact-form{
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 1.5rem; /* Decrease font size */
+    }
+
+    .contact-description {
+        font-size: 1rem; /* Decrease font size */
+    }
+    
+    .form-input,
+    .form-textarea {
+        font-size: 0.9rem; /* Decrease font size */
+    }
+
+    .contact-button {
+        font-size: 0.9rem; /* Decrease font size */
+    }
+}
 @media (max-width: 480px) {
     .contact-title {
         font-size: 1.2rem; /* Further decrease font size for very small screens */

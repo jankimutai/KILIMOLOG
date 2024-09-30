@@ -1,8 +1,6 @@
 /* LandingPage.css */
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
-
 .landing-page {
   background: linear-gradient(to right, rgba(128, 128, 128, 0.04) 1px, transparent 1px),
               linear-gradient(to bottom, rgba(128, 128, 128, 0.04) 1px, transparent 1px);
@@ -11,42 +9,31 @@
   background-color: #141414;
   color: #e0e0e0;
   padding: 2rem 0;
-  
 }
 
 .hero-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72vh;
   width: 70%;
   margin: 0 auto;
-  padding: 0 3rem;
+  height: 90vh;
 }
-
 
 .hero-player {
   flex: 1;
   max-width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 500px;
 }
-.hero-player .react-loading-skeleton {
-  height: 300px;
-  width: 300px;
-  border-radius: 8px; /* Make it resemble the Lottie image container */
-}
+
 .hero-section {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex: 1;
+  max-width: 50%;
 }
 
-
+.hero-content {
+  margin-bottom: 30px;
+}
 
 .hero-title {
   font-family: 'Dancing Script';
@@ -65,8 +52,6 @@
   position: relative;
   display: inline-block;
 }
-
-
 
 .hero-paragraph {
   font-size: 1.1rem;
@@ -121,26 +106,31 @@
 }
 
 /* Media Queries for Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero-container {
     flex-direction: column;
     text-align: center;
+    height: auto;
   }
 
-  .hero-player, .hero-section {
+  .hero-player,
+  .hero-section {
     max-width: 100%;
   }
-  .get-in-touch {
-    justify-content: center;
-    flex-wrap: wrap;
+  .hero-player{
+    width: 380px;
   }
-
   .hero-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .hero-paragraph {
     font-size: 1rem;
+  }
+
+  .get-in-touch {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .learn_more {
@@ -164,38 +154,20 @@
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1030px) {
+@media screen and (min-width: 768px) and (max-width: 1030px) {
   .hero-container {
-    width: 80%;
+    width: 90%;
+    height: auto;
     padding: 3rem;
   }
-
-  .hero-player {
-    max-width: 280px;
-  }
-
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
-
-  .learn_more {
-    font-size: 1.05rem;
-    padding: 0.7rem 1.2rem;
+  .hero-player{
+    width: 380px;
   }
-
-  .box-container {
-    margin-left: 10px;
-  }
-
-  .arrow-icon {
-    right: -46px;
-    width: 60px;
-  }
-
-  .text {
-    font-size: 1.1rem;
-    right: -60px;
-    top: -30px;
+  .hero-paragraph {
+    font-size: 1rem;
   }
 }
 

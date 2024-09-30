@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Player } from '@lottiefiles/react-lottie-player';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import "./LandingPage.css";
 import Navbar from './Navbar/Navbar';
@@ -10,44 +9,27 @@ import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
 
 const LandingPage = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Simulate a 2-second loading time
-  }, []);
-
+ 
   return (
     <>
       <Navbar />
       <section className="landing-page">
         <div id="home-section" className="hero-container">
           <div className="hero-player">
-            {loading ? (
-              <Skeleton height={380} width={380} />
-            ) : (
               <Player
                 src="https://lottie.host/e3983bcb-f73e-4240-9a9d-ce8915e9bbbb/iK8KgTBYdz.json"
-                className="player d-md-none d-lg-block"
+                className="player"
                 loop
                 autoplay
-                style={{ maxHeight: '380px', maxWidth: '380px' }}
+      
               />
-            )}
           </div>
           <div className="hero-section">
             <div className="hero-content">
-              {loading ? (
-                <Skeleton count={2} height={30} />
-              ) : (
-                <>
-                  <h1 className="hero-title">KilimoLog</h1>
-                  <p className="hero-paragraph">
-                    Enhance your farming operations with user-friendly tools that simplify the entire process of farm management. Leverage technology to gain valuable insights, optimize resources, and make informed decisions that drive sustainable growth and success for your farm.
-                  </p>
-                </>
-              )}
+              <h1 className="hero-title">KilimoLog</h1>
+              <p className="hero-paragraph">
+                Enhance your farming operations with user-friendly tools that simplify the entire process of farm management. Leverage technology to gain valuable insights, optimize resources, and make informed decisions that drive sustainable growth and success for your farm.
+              </p>
             </div>
             <div className="get-in-touch">
               <Link to="/dashboard" className="learn_more">
