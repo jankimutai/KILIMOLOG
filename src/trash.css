@@ -1,93 +1,93 @@
-/* LandingPage.css */
-@import url('https://fonts.googleapis.com/css2?family=Anglebert&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-.landing-page {
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-container {
-  display: flex;
-  flex-direction: row; /* Align items side by side */
-  align-items: stretch; /* Stretch items to fill container */
-  justify-content: center; /* Center align items */
-  width: 100%; /* Full width */
-  flex-grow: 1; /* Allow hero container to grow and fill space */
-}
-
-.hero-image {
-  flex: 1; /* Take up half of the space */
-}
-
-.hero-image img {
-  width: 100%; /* Make image responsive */
-  height: 100%; /* Ensure the image fills the container */
-  object-fit: cover; /* Cover the entire area without distortion */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow effect for dark mode */
-}
-
-.hero-section {
-  flex: 1; /* Take up the other half of the space */
-  margin: 0 10px; /* Margin to separate from the image */
-  text-align: left; /* Align text to the left */
-  display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: center;
-  align-items: center; /* Center content vertically */
-  padding: 3rem;
-  text-align: center;
-  background: linear-gradient(to right, rgba(128, 128, 128, 0.04) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(128, 128, 128, 0.04) 1px, transparent 1px);
-  background-size: 15px 30px;
-  box-sizing: border-box;
-}
-
-.hero-title {
-  
-  font-family: 'Anglebert';
-  font-size: 3.9rem;
-  color: #fff;
-  text-shadow: 
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000,
-    2px 2px 0 #245039,
-    4px 4px 0 #45b7aa;
-  letter-spacing: 2px;
-  transform: rotate(-3deg);
-  margin-bottom: 30px;
-  position: relative;
-  display: inline-block;
-}
-.hero-title::before {
-  content: 'KilimoLog';
-  position: absolute;
-  left: 0;
+/* General Styles for Navbar */
+.landing-navbar {
+  position: sticky;
   top: 0;
-  color: transparent;
-  -webkit-text-stroke: 3px #000;
-  z-index: -1;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0,0,0,0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  padding: 1rem
+}
+
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+  display: none; /* Hide by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column; /* Stack bars vertically */
+  z-index: 1001; /* On top of the navbar */
+  margin-left: 10px;
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 1.6rem;
+  height: 0.16rem;
+  background: rgb(196, 196, 196) /* Bar color */;
+  margin: 0.2rem auto;
+  transition: all 0.3s ease;
+}
+.menu-toggle:not(.open) .bar {
+  transform-origin: right;
 }
 
 
 
-.hero-paragraph {
-  font-size: clamp(1.1rem, 4vw, 1.1rem);
-  text-align: center;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  max-width: 800px; /* Space above the paragraph */
+.menu-toggle .bar:nth-child(1) {
+  transform: scaleX(1);
+}
+.menu-toggle .bar:nth-child(2) {
+  transform: scaleX(1);
+}
+.menu-toggle .bar:nth-child(3) {
+  transform: scaleX(1);
 }
 
-.get-in-touch {
-  margin-top: 30px; /* Space above the button and icon */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg); /* Rotate the first bar */
 }
 
-.learn_more {
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg); /* Rotate the third bar */
+}
+
+/* Navigation List Styles */
+.topnav-list {
+  list-style: none; /* Remove bullets */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flex display for horizontal layout */
+  gap: 1rem; /* Space between nav items */
+  padding: 10px;
+}
+
+.topnav-list.open {
+  display: flex; /* Show list when open */
+}
+
+/* Navigation Links Styles */
+.top-nav-link {
+  color: #ffffff; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-size: clamp(1rem, 2vw, 1.2rem); /* Responsive font size */
+  transition: color 0.3s; /* Transition for hover effect */
+  padding: 0.5rem; /* Padding for links */
+}
+
+.top-nav-link:hover {
+  color: #b6b6b6; /* Color change on hover */
+}
+
+/* Get Started Button */
+.get-started {
   background-color: #007bff; /* Button background */
   color: #ffffff; /* Button text color */
   padding: 0.6rem 1rem; /* Padding for button */
@@ -99,181 +99,45 @@
   align-items: center;
 }
 
-.learn_more:hover {
-  background-color: #0097ef; /* Darker green on hover */
-}
-
-.box-container {
-  position: relative;
-  display: inline-block;
-  margin-left: 20px;
-}
-.arrow-icon {
-  position: absolute;
-  right: -50px;
-  width: 70px;
-}
-
-.arrow-icon svg {
-  fill: #805ad5;
-  width: 100%;
-  height: auto;
-}
-
-.text {
-  font-size: 1.3rem;
-  position: absolute;
-  right: -85px;
-  top: -40px;
-  transform: rotate(12deg);
-  font-family: 'Caveat', cursive;
-}
-
-
-
-.text {
-  font-size: 1.3rem;
-  position: absolute;
-  right: -85px;
-  top: -40px;
-  transform: rotate(12deg);
-  font-family: 'Caveat', cursive;
-}
-
-.text:hover {
-  color: #1a73e8; /* Change color on hover */
-}
-
-/* Media Queries for Responsive Design */
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column-reverse; /* Stack items vertically */
-    height: auto; /* Reset height for mobile */
+  .menu-toggle {
+    display: flex; /* Show hamburger menu on small screens */
   }
 
-  .hero-image,
-  .hero-section {
-    flex: 0 0 50%; /* Set both to take up 50% of the height */
+  .topnav-list {
+    display: none; /* Hide by default on small screens */
+    flex-direction: column; /* Stack items vertically */
+    background: #000; /* Background for dropdown */
+    position: absolute; /* Position it absolutely */
+    top: 100%; /* Below the navbar */
+    right: 0; /* Align to the right */
     width: 100%; /* Full width */
-    margin: 0; /* Reset margin */
+    z-index: 999; /* On top of other elements */
+    gap: 5px;
   }
 
-  .hero-title {
-    font-size: 2rem; /* Smaller title on mobile */
+  .topnav-list.open {
+    display: flex; /* Show dropdown when open */
   }
 
-  .hero-paragraph {
-    font-size: 1rem; /* Smaller paragraph text on mobile */
+  .topnav-list li {
+    margin-bottom: 10px;
   }
-
-  .learn_more {
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
-  }
-
-  .box-container {
-    margin-left: 10px;
-  }
-
-  .arrow-icon {
-    right: -46px;
-    width: 60px;
-  }
-
-  .text {
-    font-size: 1.1rem;
-    right: -60px;
-    top: -30px;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1030px) {
-  .hero-container {
-    flex-direction: column-reverse; /* Stack items vertically */
-    height: auto; /* Reset height for mobile */
-  }
-
-  .hero-image,
-  .hero-section {
-    flex: 0 0 50%; /* Set both to take up 50% of the height */
-    width: 100%; /* Full width */
-    margin: 0; /* Reset margin */
-    padding: 0;;
-  }
-
-  .hero-title {
-    font-size: 2rem; /* Smaller title on mobile */
-  }
-
-  .hero-paragraph {
-    font-size: 1rem; /* Smaller paragraph text on mobile */
-  }
-
-  .learn_more {
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
-  }
-
-  .box-container {
-    margin-left: 10px;
-  }
-
-  .arrow-icon {
-    right: -46px;
-    width: 60px;
-  }
-
-  .text {
-    font-size: 1.1rem;
-    right: -60px;
-    top: -30px;
-  }
-}
-/* Media Queries for Responsive Design */
-@media (max-width: 480px) {
-
-  .hero-container {
-    flex-direction: column-reverse; /* Stack items vertically */
-    height: auto; /* Reset height for mobile */
-  }
-
-  .hero-image,
-  .hero-section {
-    flex: 1; /* Both sections take full height */
-    width: 100%; /* Full width */
-    margin: 0; /* Reset margin */
-    padding: 0;;
-  }
-
-  .hero-title {
-    font-size: 1.8rem; /* Smaller title on very small screens */
-    margin-bottom: 20px; /* Adjust margin for smaller screens */
-  }
-
-  .hero-paragraph {
-    font-size: 0.9rem; /* Smaller paragraph text on very small screens */
-    padding: 0 1rem; /* Add padding to prevent text touching the edges */
-    text-align: left;
-  }
-
-  .learn_more {
-    font-size: clamp(0.8rem, 3vw, 1rem); /* Adjust button size */
-    padding: 0.4rem 0.8rem; /* Adjust padding for smaller buttons */
-  }
-
-  .box-container {
-    margin-left: 0; /* Reset margin for smaller screens */
-    margin-top: 12px; /* Add space above for stacking */
-  }
-
-  .arrow-icon {
-    right: -45px; /* Adjust arrow icon position */
-    width: 50px; /* Adjust icon size */
-  }
-
-  .text {
-    font-size: 1rem; /* Smaller text for very small screens */
-    right: -67px; /* Adjust position */
-    top: -20px; /* Adjust position */
+  .get-started{
+      padding: 0.3rem 0.7rem; /* Padding for button */
   }
 }
 
+/* Adjust styles for larger screens */
+@media (min-width: 769px) {
+  .topnav-list {
+    display: flex; /* Show nav list on larger screens */
+    margin-left: auto; /* Move the menu items to the far right */
+    justify-content: flex-end; /* Ensure items stay on the right */
+  }
 
+  .menu-toggle {
+    display: none; /* Hide hamburger menu on larger screens */
+  }
+}

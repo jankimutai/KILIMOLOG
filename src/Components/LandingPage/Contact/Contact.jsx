@@ -11,6 +11,7 @@ const Contact = () => {
           <p className="contact-description">
             If you have any questions, inquiries, or collaboration ideas, feel free to reach out through the form below. I’ll do my best to respond as soon as possible.
           </p>
+          
 
           {/* Illustration Section */}
           <div className="illustration">

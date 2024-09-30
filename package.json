@@ -11,6 +11,7 @@
     "@fullcalendar/list": "^6.1.15",
     "@fullcalendar/react": "^6.1.14",
     "@fullcalendar/timegrid": "^6.1.15",
+    "@lottiefiles/react-lottie-player": "^3.5.4",
     "@mui/material": "^6.1.1",
     "@tanstack/react-table": "^8.20.5",
     "@testing-library/jest-dom": "^5.17.0",

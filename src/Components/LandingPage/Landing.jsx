@@ -1,25 +1,28 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import { Link } from 'react-router-dom';
 import "./LandingPage.css";
-import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar/Navbar';
 import About from './About/About';
 import Contact from './Contact/Contact';
-import corn from '../../Assets/corn.webp'; // Make sure to replace with your desired image path
+import { Player } from '@lottiefiles/react-lottie-player';
+import Footer from './Footer/Footer';
 
 const LandingPage = () => {
-  const navigate = useNavigate();
-  
-  function handleClick() {
-    navigate("/dashboard");
-  }
-
   return (
     <>  
       <Navbar />
-      <div  className="landing-page">
+      <section className="landing-page">
         <div id="home-section" className='hero-container'>
-          <div className="hero-image">
-            <img src={corn} alt="Farming" />
+          <div className="hero-player">
+            <Suspense fallback={<div className="loading-placeholder">Loading...</div>}>
+              <Player
+                src="https://lottie.host/e3983bcb-f73e-4240-9a9d-ce8915e9bbbb/iK8KgTBYdz.json"
+                loop
+                autoplay
+                rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+                onError={() => console.error("Failed to load Lottie animation")}
+              />
+            </Suspense>
           </div>
           <div className="hero-section">
             <div className="hero-content">
@@ -30,7 +33,9 @@ const LandingPage = () => {
               </p>
             </div>
             <div className="get-in-touch">
-              <button onClick={handleClick} className='learn_more'>Get Started</button>
+              <Link to="/dashboard" className="learn_more">
+                Get Started
+              </Link>
               <div className="box-container">
                 <div className="arrow-icon">
                   <svg viewBox="0 0 72 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,14 +47,16 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div id="about-section"> 
-          <About />
-        </div>
-
-        <div id="contact-section">
-          <Contact />
-        </div>
+      </section>
+      <section id="about-section"> 
+        <About />
+      </section>
+      <section id="contact-section">
+        <Contact />
+      </section>
+      <section id="footer-section">
+        <Footer />
+      </section>
     </>
   );
 };

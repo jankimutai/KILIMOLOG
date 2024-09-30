@@ -1,144 +1,142 @@
-/* General Styles for Navbar */
 .landing-navbar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(0,0,0,0.9);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    cursor: default;
-    padding: 1rem
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  color:#fff
 }
 
-  
-  /* Hamburger Menu Styles */
+.top-nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.top-nav-logo-image {
+  width: 40px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.top-nav-logo-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background: rgb(196, 196, 196);
+  transition: all 0.3s linear;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Navigation List Styles */
+.topnav-list {
+  list-style: none; /* Remove bullets */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flex display for horizontal layout */
+  gap: 1rem; /* Space between nav items */
+  padding: 10px;
+  color: #fff;
+  cursor: default;
+}
+
+.topnav-list.open {
+  display: flex; /* Show list when open */
+}
+
+/* Navigation Links Styles */
+.top-nav-link {
+  color: #ffffff; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-size: clamp(1rem, 2vw, 1.2rem); /* Responsive font size */
+  transition: color 0.3s; /* Transition for hover effect */
+  padding: 0.5rem; /* Padding for links */
+}
+
+.top-nav-link:hover {
+  color: #b6b6b6; /* Color change on hover */
+}
+
+/* Get Started Button */
+.get-started {
+  background-color: #007bff; /* Button background */
+  color: #ffffff; /* Button text color */
+  padding: 0.6rem 1rem; /* Padding for button */
+  border-radius: 9px; /* Rounded corners */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+  align-items: center;
+}
+
+
+@media (max-width: 768px) {
   .menu-toggle {
-    display: none; /* Hide by default */
-    background: none;
-    border: none;
-    cursor: pointer;
-    flex-direction: column; /* Stack bars vertically */
-    z-index: 1001; /* On top of the navbar */
-    margin-left: 10px;
+    display: flex;
   }
-  
-  .menu-toggle .bar {
-    display: block;
-    width: 1.6rem;
-    height: 0.16rem;
-    background: rgb(196, 196, 196) /* Bar color */;
-    margin: 0.2rem auto;
-    transition: all 0.3s ease;
-  }
-  .menu-toggle:not(.open) .bar {
-    transform-origin: right;
-  }
-  
-  
-  
-  .menu-toggle .bar:nth-child(1) {
-    transform: scaleX(1);
-  }
-  .menu-toggle .bar:nth-child(2) {
-    transform: scaleX(1);
-  }
-  .menu-toggle .bar:nth-child(3) {
-    transform: scaleX(1);
-  }
-  
-  .menu-toggle.open .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg); /* Rotate the first bar */
-  }
-  
-  .menu-toggle.open .bar:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .menu-toggle.open .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg); /* Rotate the third bar */
-  }
-  
-  /* Navigation List Styles */
+
   .topnav-list {
-    list-style: none; /* Remove bullets */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Flex display for horizontal layout */
-    gap: 1rem; /* Space between nav items */
-    padding: 10px;
+    display: none; /* Hide by default on small screens */
+    flex-direction: column; /* Stack items vertically */
+    background: #000; /* Background for dropdown */
+    position: absolute; /* Position it absolutely */
+    top: 100%; /* Below the navbar */
+    right: 0; /* Align to the right */
+    width: 100%; /* Full width */
+    z-index: 999; /* On top of other elements */
+    gap: 5px;
+    padding: 1rem;
   }
-  
+
   .topnav-list.open {
-    display: flex; /* Show list when open */
+    display: flex;
   }
-  
-  /* Navigation Links Styles */
+
+  .topnav-list li {
+    margin-bottom: 10px;
+  }
+
   .top-nav-link {
-    color: #ffffff; /* Link color */
-    text-decoration: none; /* Remove underline */
-    font-size: clamp(1rem, 2vw, 1.2rem); /* Responsive font size */
-    transition: color 0.3s; /* Transition for hover effect */
-    padding: 0.5rem; /* Padding for links */
+    display: block;
+    padding: 0.5rem;
   }
-  
-  .top-nav-link:hover {
-    color: #b6b6b6; /* Color change on hover */
-  }
-  
-  /* Get Started Button */
+
   .get-started {
-    background-color: #007bff; /* Button background */
-    color: #ffffff; /* Button text color */
-    padding: 0.6rem 1rem; /* Padding for button */
-    border-radius: 9px; /* Rounded corners */
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-top: 10px;
-    align-items: center;
+    display: inline-block;
+    margin-top: 0.5rem;
   }
-  
-  /* Media Queries for Responsive Design */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: flex; /* Show hamburger menu on small screens */
-    }
-  
-    .topnav-list {
-      display: none; /* Hide by default on small screens */
-      flex-direction: column; /* Stack items vertically */
-      background: #000; /* Background for dropdown */
-      position: absolute; /* Position it absolutely */
-      top: 100%; /* Below the navbar */
-      right: 0; /* Align to the right */
-      width: 100%; /* Full width */
-      z-index: 999; /* On top of other elements */
-      gap: 5px;
-    }
-  
-    .topnav-list.open {
-      display: flex; /* Show dropdown when open */
-    }
-  
-    .topnav-list li {
-      margin-bottom: 10px;
-    }
-    .get-started{
-        padding: 0.3rem 0.7rem; /* Padding for button */
-    }
-  }
-  
-  /* Adjust styles for larger screens */
-  @media (min-width: 769px) {
-    .topnav-list {
-      display: flex; /* Show nav list on larger screens */
-      margin-left: auto; /* Move the menu items to the far right */
-      justify-content: flex-end; /* Ensure items stay on the right */
-    }
-  
-    .menu-toggle {
-      display: none; /* Hide hamburger menu on larger screens */
-    }
-  }
-  
+}
