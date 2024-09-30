@@ -16,11 +16,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  height: 90vh;
+  gap: 4rem;
+  height: 72vh;
   width: 70%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 3rem;
 }
 
 .hero-player {

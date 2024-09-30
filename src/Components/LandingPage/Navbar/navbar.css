@@ -120,6 +120,7 @@
     z-index: 999; /* On top of other elements */
     gap: 5px;
     padding: 1rem;
+    
   }
 
   .topnav-list.open {
@@ -128,8 +129,11 @@
 
   .topnav-list li {
     margin-bottom: 10px;
+    border-bottom: 1px solid #444;
   }
-
+  .topnav-list li:last-child {
+    border-bottom: none; /* Remove border for the last element */
+  }
   .top-nav-link {
     display: block;
     padding: 0.5rem;

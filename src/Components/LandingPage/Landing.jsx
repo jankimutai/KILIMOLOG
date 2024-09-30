@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import "./LandingPage.css";
 import Navbar from './Navbar/Navbar';
@@ -14,15 +14,12 @@ const LandingPage = () => {
       <section className="landing-page">
         <div id="home-section" className='hero-container'>
           <div className="hero-player">
-            <Suspense fallback={<div className="loading-placeholder">Loading...</div>}>
               <Player
                 src="https://lottie.host/e3983bcb-f73e-4240-9a9d-ce8915e9bbbb/iK8KgTBYdz.json"
                 loop
                 autoplay
-                rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
-                onError={() => console.error("Failed to load Lottie animation")}
+                style={{ maxHeight: '380px', maxWidth: '380px' }}
               />
-            </Suspense>
           </div>
           <div className="hero-section">
             <div className="hero-content">

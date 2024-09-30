@@ -2,16 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll'; // Import ScrollLink from react-scroll
 import "./footer.css";
-import logo from "../../../Assets/logo.webp";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    console.log("Subscribed with email:", email);
-    setEmail(""); // Reset email input after submission
-  };
+ 
 
   return (
     <footer className="footer">
@@ -64,20 +57,7 @@ const Footer = () => {
         </div>
         
       </div>
-      <div className="newsletter">
-        <h3>Subscribe to Our Newsletter</h3>
-        <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            required
-            className="newsletter-input"
-          />
-          <button type="submit" className="newsletter-button">Subscribe</button>
-        </form>
-      </div>
+ 
 
       
       <div className="footer-bottom">
