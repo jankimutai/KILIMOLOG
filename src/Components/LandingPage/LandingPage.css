@@ -4,64 +4,56 @@
 .landing-page {
   background: linear-gradient(to right, rgba(128, 128, 128, 0.04) 1px, transparent 1px),
               linear-gradient(to bottom, rgba(128, 128, 128, 0.04) 1px, transparent 1px);
-  background-size: 10px 20px;
+  background-size: 50px 50px;
   box-sizing: border-box;
   background-color: #141414;
   color: #e0e0e0;
   padding: 2rem 0;
 }
-
+/* Hero Section */
 .hero-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  width: 70%;
-  margin: 0 auto;
-  height: 90vh;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 1rem;
+  text-align: center;
 }
 
 .hero-player {
-  flex: 1;
-  max-width: 50%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.player {
+  width: 100%;
+  height: auto;
 }
 
 .hero-section {
-  flex: 1;
-  max-width: 50%;
-}
-
-.hero-content {
-  margin-bottom: 30px;
+  max-width: 900px;
+  padding: 0 0.5rem;
 }
 
 .hero-title {
-  font-family: 'Dancing Script';
-  font-size: 4.2rem;
-  color: #fff;
-  text-shadow: 
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000,
-    2px 2px 0 #245039,
-    4px 4px 0 #45b7aa;
+  font-size: 3rem;
+  color: #ffffff;
+  text-transform: uppercase;
   letter-spacing: 3px;
-  transform: rotate(-3deg);
-  margin-bottom: 30px;
-  position: relative;
-  display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .hero-paragraph {
   font-size: 1.1rem;
   line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .get-in-touch {
   margin-top: 30px;
 }
-
 .learn_more {
   background-color: #007bff;
   color: #ffffff;
@@ -105,29 +97,26 @@
   font-family: 'Caveat', cursive;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 767px) {
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
-    height: auto;
-  }
-
-  .hero-player,
-  .hero-section {
-    max-width: 100%;
-  }
+/* Fluid and Responsive Adjustments */
+@media (max-width: 1200px) {
   .hero-player{
-    width: 380px;
+    max-width: 300px;
   }
   .hero-title {
     font-size: 2.5rem;
   }
+  .hero-paragraph {
+    font-size: 1.1rem;
+  }
+}
 
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
   .hero-paragraph {
     font-size: 1rem;
   }
-
   .get-in-touch {
     flex-direction: column;
     align-items: flex-start;
@@ -154,44 +143,17 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1030px) {
-  .hero-container {
-    width: 90%;
-    height: auto;
-    padding: 3rem;
-  }
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  .hero-player{
-    width: 380px;
-  }
-  .hero-paragraph {
-    font-size: 1rem;
-  }
-}
-
 @media (max-width: 480px) {
-  .hero-container {
-    width: 95%;
-    flex-direction: column;
-    padding: 1rem;
-    height: auto;
-  }
-
+ 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
   }
-
   .hero-paragraph {
     font-size: 0.9rem;
   }
-
   .learn_more {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.9rem;
+    padding: 8px 16px;
   }
-
   .box-container {
     margin-left: 0; /* Reset margin for smaller screens */
     margin-top: 12px; /* Add space above for stacking */
