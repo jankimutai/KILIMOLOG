@@ -5,22 +5,22 @@
   background: linear-gradient(to right, rgba(128, 128, 128, 0.04) 1px, transparent 1px),
               linear-gradient(to bottom, rgba(128, 128, 128, 0.04) 1px, transparent 1px);
   background-size: 50px 50px;
-  box-sizing: border-box;
   background-color: #141414;
   color: #e0e0e0;
-  padding: 2rem 0;
+ 
 }
 /* Hero Section */
 .hero-container {
+  width: 70%; /* Match About container width */
+  margin: 0 auto;
+  padding: 0 1rem; /* Match About container padding */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  padding: 0 1rem;
   text-align: center;
 }
-
 .hero-player {
   width: 100%;
   max-width: 400px;
@@ -34,17 +34,26 @@
 
 .hero-section {
   max-width: 900px;
-  padding: 0 0.5rem;
+  
+  
 }
 
 .hero-title {
-  font-size: 3rem;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 1rem;
+  font-family: 'Dancing Script';
+  font-size: 4.2rem;
+  color: #fff;
+  text-shadow: 
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    2px 2px 0 #245039,
+    4px 4px 0 #45b7aa;
+  letter-spacing: 6px;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
 }
-
 .hero-paragraph {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -103,16 +112,20 @@
     max-width: 300px;
   }
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
   .hero-paragraph {
     font-size: 1.1rem;
+
   }
 }
 
 @media (max-width: 768px) {
+  .hero-container {
+    width: 90%; /* Match About section on medium screens */
+  }
   .hero-title {
-    font-size: 2rem;
+    font-size: 3.5rem;
   }
   .hero-paragraph {
     font-size: 1rem;
@@ -144,9 +157,11 @@
 }
 
 @media (max-width: 480px) {
- 
+  .hero-container {
+    width: 95%; /* Match About section on small screens */
+  }
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
   }
   .hero-paragraph {
     font-size: 0.9rem;
