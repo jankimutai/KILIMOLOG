@@ -1,39 +1,64 @@
 .landing-navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3.5rem;
+  background-color: #f8fafc;
   z-index: 1000;
-  color:#fff
+  transition: all 0.3s ease;
 }
+
 
 .top-nav-logo {
   display: flex;
   align-items: center;
 }
 
-.top-nav-logo-image {
-  width: 40px;
-  height: auto;
-  margin-right: 0.5rem;
+.top-nav-heading {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #16a34a;
+  letter-spacing: -0.5px;
+}
+.top-nav-link {
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.topnav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
 }
 
-.top-nav-logo-heading {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
+.top-nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
+
+.top-nav-link:hover {
+  border-bottom: 1px solid #16a34a;
+}
+
 
 .menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 32px;
+  width: 30px;
   height: 21px;
   background: transparent;
   border: none;
@@ -43,104 +68,75 @@
 }
 
 .menu-toggle .bar {
+  height: 3px;
   width: 100%;
-  height: 4px;
-  background: rgb(196, 196, 196);
-  transition: all 0.3s linear;
+  background-color: #333;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
 }
-
-.menu-toggle.open .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.open .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
-}
-
-/* Navigation List Styles */
-.topnav-list {
-  list-style: none; /* Remove bullets */
-  margin: 0;
-  padding: 0;
-  display: flex; /* Flex display for horizontal layout */
-  gap: 1rem; /* Space between nav items */
-  padding: 10px;
-  color: #fff;
-  cursor: default;
-}
-
-.topnav-list.open {
-  display: flex; /* Show list when open */
-}
-
-/* Navigation Links Styles */
-.top-nav-link {
-  color: #ffffff; /* Link color */
-  text-decoration: none; /* Remove underline */
-  font-size: clamp(1rem, 2vw, 1.2rem); /* Responsive font size */
-  transition: color 0.3s; /* Transition for hover effect */
-  padding: 0.5rem; /* Padding for links */
-}
-
-.top-nav-link:hover {
-  color: #b6b6b6; /* Color change on hover */
-}
-
-/* Get Started Button */
-.get-started {
-  background-color: #007bff; /* Button background */
-  color: #ffffff; /* Button text color */
-  padding: 0.6rem 1rem; /* Padding for button */
-  border-radius: 9px; /* Rounded corners */
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  margin-top: 10px;
-  align-items: center;
-}
-
 
 @media (max-width: 768px) {
+  .landing-navbar {
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+  }
+
   .menu-toggle {
     display: flex;
   }
 
   .topnav-list {
-    display: none; /* Hide by default on small screens */
-    flex-direction: column; /* Stack items vertically */
-    background: #000; /* Background for dropdown */
-    position: absolute; /* Position it absolutely */
-    top: 100%; /* Below the navbar */
-    right: 0; /* Align to the right */
-    width: 100%; /* Full width */
-    z-index: 999; /* On top of other elements */
-    gap: 5px;
-    padding: 1rem;
-    
+    position: static;
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    order: 3;
+    margin-top: 0;
   }
 
   .topnav-list.open {
-    display: flex;
+    max-height: 400px; /* Adjust this value based on your content */
+    opacity: 1;
+    padding: 1rem 0;
+    margin-top: 1rem;
   }
 
-  .topnav-list li {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #444;
+  .menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
   }
-  .topnav-list li:last-child {
-    border-bottom: none; /* Remove border for the last element */
+
+  .menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
   }
-  .top-nav-link {
-    display: block;
-    padding: 0.5rem;
+
+  .menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
   }
 
   .get-started {
-    display: inline-block;
+    width: 100%;
+    text-align: center;
     margin-top: 0.5rem;
+  }
+  /* These ensure the logo and toggle button stay on the same line */
+  .top-nav-logo {
+    order: 1;
+  }
+
+  .menu-toggle {
+    order: 2;
+  }
+}
+@media screen and (max-width: 480px) {
+  .landing-navbar {
+    padding: 1rem;
+  }
+
+  .top-nav-heading {
+    font-size: 1.5rem;
   }
 }

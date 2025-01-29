@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Player } from '@lottiefiles/react-lottie-player';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -8,7 +8,7 @@ import About from './About/About';
 import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
 
-const LandingPage = () => {
+const Hero = () => {
  
   return (
     <>
@@ -26,7 +26,7 @@ const LandingPage = () => {
           </div>
           <div className="hero-section">
             <div className="hero-content">
-              <h1 className="hero-title">KilimoLog</h1>
+              <h3 className="hero-title">Boost Your Farm's Productivity with Smart Tools</h3>
               <p className="hero-paragraph">
                 Enhance your farming operations with user-friendly tools that simplify the entire process of farm management. Leverage technology to gain valuable insights, optimize resources, and make informed decisions that drive sustainable growth and success for your farm.
               </p>
@@ -60,4 +60,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default Hero;

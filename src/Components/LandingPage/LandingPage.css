@@ -1,30 +1,25 @@
-/* LandingPage.css */
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 .landing-page {
-  background: linear-gradient(to right, rgba(128, 128, 128, 0.04) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(128, 128, 128, 0.04) 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-color: #141414;
-  color: #e0e0e0;
- 
-}
-/* Hero Section */
-.hero-container {
-  width: 70%; /* Match About container width */
-  margin: 0 auto;
-  padding: 0 1rem; /* Match About container padding */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-}
-.hero-player {
   width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
+  min-height: 100dvh;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7rem 4rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 4rem;
+}
+
+.hero-player {
+  flex: 1;
+  max-width: 600px;
 }
 
 .player {
@@ -33,50 +28,45 @@
 }
 
 .hero-section {
-  max-width: 900px;
-  
-  
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-content {
+  margin-bottom: 2.5rem;
 }
 
 .hero-title {
-  font-family: 'Dancing Script';
-  font-size: 4.2rem;
-  color: #fff;
-  text-shadow: 
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000,
-    2px 2px 0 #245039,
-    4px 4px 0 #45b7aa;
-  letter-spacing: 6px;
-  margin-bottom: 30px;
-  position: relative;
-  display: inline-block;
-}
-.hero-paragraph {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
 }
 
-.get-in-touch {
-  margin-top: 30px;
-}
-.learn_more {
-  background-color: #007bff;
-  color: #ffffff;
-  padding: 0.8rem 1.4rem;
-  border-radius: 9px;
-  text-decoration: none;
-  font-weight: bold;
+.hero-paragraph {
   font-size: 1.1rem;
-  margin-top: 10px;
-  align-items: center;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+.learn_more {
+  font-size: 1.1rem;
+  background: #16a34a;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  text-decoration: none;
 }
 
 .learn_more:hover {
-  background-color: #0097ef;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+  color: white;
 }
 
 .box-container {
@@ -88,13 +78,14 @@
 .arrow-icon {
   position: absolute;
   right: -50px;
-  width: 70px;
+  width: 60px;
 }
 
 .arrow-icon svg {
   fill: #805ad5;
   width: 100%;
   height: auto;
+  color: #4a5568;
 }
 
 .text {
@@ -104,32 +95,48 @@
   top: -40px;
   transform: rotate(12deg);
   font-family: 'Caveat', cursive;
+  color: #4a5568;
 }
 
-/* Fluid and Responsive Adjustments */
-@media (max-width: 1200px) {
-  .hero-player{
-    max-width: 300px;
-  }
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  .hero-paragraph {
-    font-size: 1.1rem;
 
-  }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-@media (max-width: 768px) {
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
   .hero-container {
-    width: 90%; /* Match About section on medium screens */
+    padding: 6rem 2rem 3rem;
+    gap: 3rem;
   }
+
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
-  .hero-paragraph {
-    font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 5rem 1.5rem 2rem;
+    text-align: center;
   }
+
+  .hero-player {
+    order: -1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .hero-section {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
   .get-in-touch {
     flex-direction: column;
     align-items: flex-start;
@@ -156,16 +163,19 @@
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .hero-container {
-    width: 95%; /* Match About section on small screens */
+    padding: 4rem 1rem 2rem;
   }
+
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
+
   .hero-paragraph {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
+
   .learn_more {
     padding: 8px 16px;
   }

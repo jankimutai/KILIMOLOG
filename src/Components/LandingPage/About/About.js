@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './about.css'; // Link to your CSS for styling
 import sunflower from '../../../Assets/aaron-burden-2IzoIHBgYAo-unsplash.jpg';
 import corn from '../../../Assets/christophe-maertens-v9r31Dxg0X0-unsplash.jpg';
@@ -6,11 +6,6 @@ import wheat3 from '../../../Assets/polina-rytova-1dGMs4hhcVA-unsplash.jpg';
 import canola from '../../../Assets/michael-milverton-n0GvTPlvY4w-unsplash.jpg';
 
 const About = () => {
-  // State for loading status of images
-  const [wheatLoaded, setWheatLoaded] = useState(false);
-  const [sunflowerLoaded, setSunflowerLoaded] = useState(false);
-  const [cornLoaded, setCornLoaded] = useState(false);
-  const [canolaLoaded, setCanolaLoaded] = useState(false);
 
   return (
     <section className="about-section">
@@ -24,13 +19,10 @@ const About = () => {
 
           <div className="feature-section">
             <div className="feature-card">
-              {/* Wheat Image with Skeleton */}
-              {!wheatLoaded && <div className="skeleton skeleton-image"></div>}
               <img
                 src={wheat3}
                 alt="Dry Wheat"
-                className={`feature-image ${wheatLoaded ? '' : 'hidden'}`}
-                onLoad={() => setWheatLoaded(true)}
+                className="feature-image"
                 loading="lazy"
               />
               <h3 className="feature-title">Wheat Farm</h3>
@@ -38,13 +30,10 @@ const About = () => {
             </div>
 
             <div className="feature-card">
-              {/* Sunflower Image with Skeleton */}
-              {!sunflowerLoaded && <div className="skeleton skeleton-image"></div>}
               <img
                 src={sunflower}
                 alt="Sunflower"
-                className={`feature-image ${sunflowerLoaded ? '' : 'hidden'}`}
-                onLoad={() => setSunflowerLoaded(true)}
+                className="feature-image"
                 loading="lazy"
               />
               <h3 className="feature-title">Sunflower</h3>
@@ -52,13 +41,10 @@ const About = () => {
             </div>
 
             <div className="feature-card">
-              {/* Corn Image with Skeleton */}
-              {!cornLoaded && <div className="skeleton skeleton-image"></div>}
               <img
                 src={corn}
                 alt="Maize Farm"
-                className={`feature-image ${cornLoaded ? '' : 'hidden'}`}
-                onLoad={() => setCornLoaded(true)}
+                className="feature-image"
                 loading="lazy"
               />
               <h3 className="feature-title">Maize Farm</h3>
@@ -66,13 +52,10 @@ const About = () => {
             </div>
 
             <div className="feature-card">
-              {/* Canola Image with Skeleton */}
-              {!canolaLoaded && <div className="skeleton skeleton-image"></div>}
               <img
                 src={canola}
                 alt="Canola Farm"
-                className={`feature-image ${canolaLoaded ? '' : 'hidden'}`}
-                onLoad={() => setCanolaLoaded(true)}
+                className="feature-image"
                 loading="lazy"
               />
               <h3 className="feature-title">Canola Farm</h3>

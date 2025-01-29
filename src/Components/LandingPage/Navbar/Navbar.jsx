@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll'; // Import ScrollLink from react-scroll
+import { Link as ScrollLink } from 'react-scroll'; 
 import './navbar.css';
-import logo from "../../../Assets/logo.webp"
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -13,8 +12,7 @@ const NavBar = () => {
   return (
     <nav className="landing-navbar">
       <div className='top-nav-logo'>
-      <img src={logo} alt="logo" className='top-nav-logo-image' />
-      <span className="top-nav-logo-heading">KilimoLog</span>
+      <span className="top-nav-heading">KilimoLog</span>
       </div>
       <button
         className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}

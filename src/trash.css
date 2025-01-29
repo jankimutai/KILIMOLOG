@@ -1,170 +1,144 @@
-/* about.css */
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
-.about-section {
-  background-color: #141414;
-  color: #e0e0e0;
-  padding: 2rem 0;
-}
-
-.about-container {
-  width: 70%;
-  margin: 0 auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.about-title {
-  font-family: 'Dancing Script', cursive;
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  color: #ffffff;
-}
-
-.about-text {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-
-.feature-section {
+.contact-container {
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #f7fafc;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-content {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  background-color: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  flex-wrap: wrap;
+
+  
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+}
+
+.contact-description {
+  color: #4a5568;
+  line-height: 1.7;
   margin-bottom: 2rem;
 }
 
-.feature-card {
-  width: 48%;
-  margin-bottom: 2rem;
-  background-color: #1e1e1e;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
+.illustration {
+  max-width: 400px;
+  width: 100%;
+  margin-top: 2rem;
 }
 
-.feature-card:hover {
-  transform: translateY(-10px);
-}
-
-.feature-image {
+.contact-svg {
   width: 100%;
   height: auto;
-  border-radius: 5px;
 }
 
-.hidden {
-  display: none;
-}
-
-.skeleton {
-  background-color: #333;
+.contact-form {
   width: 100%;
-  height: 250px;
-  border-radius: 5px;
 }
 
-.feature-title {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  color: #f5f5f5;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.feature-description {
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
   font-size: 1rem;
-  margin-top: 0.5rem;
-  color: #cccccc;
+  transition: border-color 0.2s ease;
 }
 
-.about-mission,
-.about-vision,
-.about-testimonials {
-  margin: 3rem 0;
+.form-input:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
 }
 
-.about-subtitle {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  color: #f5f5f5;
-}
-
-.testimonial {
-  background-color: #1e1e1e;
-  padding: 1rem;
-  border-radius: 8px;
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-.testimonial-text {
+.form-textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
   font-size: 1rem;
-  color: #cccccc;
-  margin-bottom: 0.5rem;
+  resize: vertical;
+  transition: border-color 0.2s ease;
 }
 
-.testimonial-author {
-  font-size: 0.9rem;
-  font-style: italic;
-  color: #999999;
+.form-textarea:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
 }
 
-/* Fluid and Responsive Adjustments */
+.contact-button {
+  background-color: #15803d;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact-button:hover {
+  background-color: #16a34a;
+}
+
+
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .about-container {
-    width: 90%;
-  }
-  
-  .feature-card {
-    width: 100%;
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
   }
 
-  .about-title {
-    font-size: 2.5rem;
-  }
-
-  .about-subtitle {
+  .contact-title {
     font-size: 2rem;
   }
 
-  .about-text,
-  .feature-description {
-    font-size: 1.1rem;
+  .illustration {
+    max-width: 300px;
+    margin: 2rem auto;
   }
 }
 
 @media (max-width: 480px) {
-  .about-container {
-    width: 95%;
+  .contact-container {
+    padding: 1rem;
   }
 
-  .about-title {
-    font-size: 2rem;
+  .contact-content {
+    padding: 1.5rem;
   }
 
-  .about-subtitle {
-    font-size: 1.8rem;
-  }
-
-  .about-text {
-    font-size: 1rem;
-  }
-
-  .feature-card {
-    margin-bottom: 1.5rem;
-  }
-
-  .feature-description {
-    font-size: 0.9rem;
-  }
-
-  .testimonial-text {
-    font-size: 0.9rem;
-  }
-
-  .testimonial-author {
-    font-size: 0.8rem;
+  .contact-title {
+    font-size: 1.75rem;
   }
 }

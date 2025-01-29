@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaHome, FaTint, FaSeedling, FaCog } from 'react-icons/fa';
 import './sidebar.css';
+import { FaPaw } from 'react-icons/fa';
 
 const Sidebar = ({ setActivePage, activePage, isOpen, closeSidebar }) => {
   return (
@@ -24,6 +25,12 @@ const Sidebar = ({ setActivePage, activePage, isOpen, closeSidebar }) => {
             onClick={() => setActivePage('farm-records')}
           >
             <FaSeedling className="sidebar-icon" /> Farm Records
+          </li>
+          <li 
+            className={`sidebar-item ${activePage === 'animal-records' ? 'active' : ''}`} 
+            onClick={() => setActivePage('animal-records')}
+          >
+            <FaPaw className="sidebar-icon" /> Animal Records
           </li>
           <li 
             className={`sidebar-item ${activePage === 'settings' ? 'active' : ''}`} 

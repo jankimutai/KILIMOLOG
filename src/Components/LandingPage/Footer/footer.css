@@ -1,126 +1,121 @@
-/* Footer Styles */
 .footer {
-    background-color: #181818; /* Dark background */
-    color: #e0e0e0;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
-.footer-header {
-    font-size: 1.6rem;
-    text-align: center;
-    text-transform: uppercase;
-    padding-bottom: 8px;
-    color: #fff;
-}
-
-.footer-header:after {
-    width: 65px;
-    height: 3px;
-    display: block;
-    content: "";
-    position: relative;
-    margin-top: 10px;
-    left: 50%;
-    margin-left: -40px;
-    background-color: #009bff;
-}
-
-.footer-links {
-    flex: 1;
-    margin-right: 10px;
-}
-
-.footer-link-list {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Row layout */
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer-link-list li {
-    margin-right: 10px;
-}
-
-.footer-link-list li:last-child {
-    margin-right: 0;
-}
-
-.footer-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.2rem 0.6rem; /* Padding for button */
-    background: none;
-    cursor: default;
-    align-items: center;
-}
-
-.footer-link:hover {
-    color: #009def; /* Accent color on hover */
-}
-
-.get-started-footer {
-    
-    padding: 8px 15px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.get-started-footer:hover {
-    color: #333;
-}
-
-
-
-
-.footer-bottom p {
-    margin: 0;
-    font-size: 1rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-link-list {
-        flex-direction: column; /* Stack the links vertically */
-    }
-
-    .footer-link-list {
-        font-size: 0.9rem; /* Same as contact component */
-    }
-
-    .footer-link-list li {
-        margin-bottom: 12px;
-        margin-right: 0; /* Remove right margin for vertical list */
-    }
-
-    .footer-link {
-        font-size: 0.9rem; /* Same as contact component */
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-header {
-        font-size: 1.2rem; /* Adjust for small screens */
-    }
-
-}
+  background-color: #156e37;
+  color: #ffffff;
+  padding: 3rem 0 1.5rem;
+  width: 100%;
+ }
+ 
+ .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+ }
+ 
+ .footer-links {
+  text-align: center;
+ }
+ 
+ .footer-header {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+ }
+ 
+ .footer-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+ }
+ 
+ .footer-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+ }
+ 
+ .footer-link:not(.get-started-footer)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #16a34a;
+  transition: width 0.3s ease;
+ }
+ 
+ .footer-link:not(.get-started-footer):hover {
+  color: #ededed;
+ }
+ 
+ .footer-link:not(.get-started-footer):hover::after {
+  width: 100%;
+ }
+ 
+ .get-started-footer {
+  color: #ffffff;
+  font-weight: 600;
+ }
+ 
+ .get-started-footer:hover {
+  color: #f0f0f0;
+ }
+ 
+ .footer-bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  border-top: 2px solid #15803d;
+ }
+ 
+ .footer-bottom p {
+  color: #e2e8f0;
+  font-size: 0.875rem;
+  margin: 0;
+ }
+ 
+ /* Responsive Design */
+ @media screen and (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+ 
+  .footer-content {
+    padding: 0 1.5rem;
+  }
+ 
+  .footer-header {
+    font-size: 1.125rem;
+  }
+ 
+  .footer-link {
+    font-size: 0.95rem;
+  }
+ 
+  .footer-bottom {
+    margin-top: 2rem;
+  }
+ }
+ 
+ @media screen and (max-width: 480px) {
+  .footer-content {
+    padding: 0 1rem;
+  }
+ 
+  .footer-bottom p {
+    font-size: 0.8125rem;
+  }
+ 
+  .footer-link-list {
+    gap: 0.875rem;
+  }
+ }
