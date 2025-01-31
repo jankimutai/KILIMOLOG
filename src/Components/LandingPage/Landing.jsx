@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Player } from '@lottiefiles/react-lottie-player';
-import 'react-loading-skeleton/dist/skeleton.css';
+
 import "./LandingPage.css";
 import Navbar from './Navbar/Navbar';
 import About from './About/About';

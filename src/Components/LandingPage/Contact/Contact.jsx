@@ -1,4 +1,5 @@
 import React from 'react';
+import { Player } from '@lottiefiles/react-lottie-player';
 import './contact.css';
 
 const Contact = () => {
@@ -9,24 +10,18 @@ const Contact = () => {
         <div className="contact-info">
           <h1 className="contact-title">Get In Touch</h1>
           <p className="contact-description">
-            If you have any questions, inquiries, or collaboration ideas, feel free to reach out through the form below. I’ll do my best to respond as soon as possible.
+            If you have any questions, inquiries, or collaboration ideas, feel free to reach out through the form below. I'll do my best to respond as soon as possible.
           </p>
           
-
-          {/* Illustration Section */}
+          {/* Lottie Animation Section */}
           <div className="illustration">
-            <svg className="contact-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="none">
-              <rect width="100%" height="100%" fill="#1a202c" />
-              <g>
-                <rect x="64" y="128" width="384" height="256" rx="16" fill="#fff" stroke="#4A5568" strokeWidth="4" />
-                <path d="M80 144h352v32H80v-32z" fill="#CBD5E0" />
-                <circle cx="112" cy="160" r="12" fill="#4299E1" />
-                <circle cx="160" cy="160" r="12" fill="#48BB78" />
-                <circle cx="208" cy="160" r="12" fill="#F56565" />
-                <path d="M80 192h352v176H80V192z" fill="#EDF2F7" />
-                <path d="M150 230l106 70c4 3 9 3 13 0l106-70" fill="none" stroke="#A0AEC0" strokeWidth="8" />
-              </g>
-            </svg>
+          <Player
+              src="https://lottie.host/b34c206f-060e-4f5f-a1b1-d51e4c2c4385/vf3uCh75ay.json"
+              className="player"
+              loop
+              autoplay
+              style={{ maxHeight: '450px', maxWidth: '450px' }}
+            />
           </div>
         </div>
 
