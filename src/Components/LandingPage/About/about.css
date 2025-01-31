@@ -1,5 +1,5 @@
 .about-section {
-  padding: 5rem 0;
+  padding: 1rem 0;
   background-color: #f8fafc;
  }
  
@@ -16,7 +16,7 @@
  }
  
  .about-title {
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(1.8rem, 4vw, 2rem);
   font-weight: 800;
   text-align: center;
   margin-bottom: 0.5rem;

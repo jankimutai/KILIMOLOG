@@ -1,7 +1,10 @@
 .contact-container {
-  width: 100%;
-  padding: 4rem 2rem;
-  background-color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 1rem 0;
  }
  
  .contact-content {

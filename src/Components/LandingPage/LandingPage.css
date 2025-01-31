@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 .landing-page {
-  width: 100%;
-  min-height: 100svh;
-  background-color: #f8f9fa;
-  overflow-x: hidden;
+  padding: 5rem 0;
+  background-color: #f8fafc;
 }
 
+/* Hero Section */
 .hero-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 4rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  gap: 4rem;
+  justify-content: center;
+  /* text-align: center; */
+  padding: 100px 20px;
+  background: linear-gradient(to right, #16a34a, #4cae4c);
+  color: #ffffff;
 }
 
 .hero-player {
-  flex: 1;
-  max-width: 600px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
 }
 
 .player {
@@ -27,47 +27,33 @@
   height: auto;
 }
 
-.hero-section {
-  flex: 1;
-  max-width: 600px;
-}
-
-.hero-content {
-  margin-bottom: 2.5rem;
-}
-
 .hero-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #2d3748;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.8rem, 4vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
 }
 
 .hero-paragraph {
-  font-size: clamp(1.1rem, 1.2vw, 1.125rem);
-  line-height: 1.7;
-  color: #2d3748;
-  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  max-width: 800px;
 }
 
+/* Button Styles */
+
+
 .learn_more {
-  display: inline-block;
-  padding: clamp(0.875rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
-  font-size: clamp(1rem, 2vw, 1.1rem);
-  font-weight: 600;
-  color: #ffffff;
-  background-color: #156e37;
-  border-radius: 8px;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(21, 110, 55, 0.1);
+  background-color: #ff9800;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: 0.3s;
 }
 
 .learn_more:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
-  color: white;
+  background-color: #e68900;
 }
 
 .box-container {
@@ -86,7 +72,7 @@
   fill: #805ad5;
   width: 100%;
   height: auto;
-  color: #4a5568;
+  color: #ffffff;
 }
 
 .text {
@@ -96,7 +82,7 @@
   top: -40px;
   transform: rotate(12deg);
   font-family: 'Caveat', cursive;
-  color: #4a5568;
+  color: #ffffff;
 }
 
 
@@ -105,94 +91,26 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Responsive Design */
+
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row;
+    text-align: left;
+
+  }
+  .hero-section {
+    max-width: 600px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .hero-container {
-    padding: 6rem 2rem 3rem;
-    gap: 3rem;
+    padding: 80px 30px;
   }
-
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
   }
-}
-
-@media screen and (max-width: 768px) {
-  .hero-container {
-    flex-direction: column;
-    padding:  2rem;
-    text-align: center;
-  }
-  
-
-  .hero-player {
-    order: -1;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .hero-section {
-    max-width: 100%;
-  }
-
-  .hero-title {
-    font-size: 2.25rem;
-  }
-
-  .get-in-touch {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .learn_more {
-    font-size: 1rem;
-    padding: 0.6rem 1rem;
-  }
-
-  .box-container {
-    margin-left: 10px;
-  }
-
-  .arrow-icon {
-    right: -46px;
-    width: 60px;
-  }
-
-  .text {
+  .hero-paragraph {
     font-size: 1.1rem;
-    right: -60px;
-    top: -30px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .hero-container {
-    padding: 4rem 1rem 2rem;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  
-
-  .learn_more {
-    padding: 8px 16px;
-    
-  }
-  .box-container {
-    margin-left: 0; /* Reset margin for smaller screens */
-    margin-top: 12px; /* Add space above for stacking */
-  }
-
-  .arrow-icon {
-    right: -45px; /* Adjust arrow icon position */
-    width: 50px; /* Adjust icon size */
-  }
-
-  .text {
-    font-size: 1rem; /* Smaller text for very small screens */
-    right: -67px; /* Adjust position */
-    top: -20px; /* Adjust position */
   }
 }
