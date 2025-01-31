@@ -1,172 +1,166 @@
 .milk-records-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .title {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .record-summary {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f0f0f0;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .total-quantity, .number-of-records {
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.record-summary {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.total-quantity, .number-of-records {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.form-calendar {
+  display: flex;
+  gap: 20px;
+}
+
+.form-container {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.form-header {
+  margin-bottom: 20px;
+}
+
+.form-header h3 {
+  color: #333;
+  margin: 0;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.input-date, .input-quantity {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-success, .btn-danger, .btn-secondary {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #45a049;
+}
+
+.btn-danger {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #da190b;
+}
+
+.btn-secondary {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #e0e0e0;
+}
+
+.error-message {
+  color: #f44336;
+  margin-top: 10px;
+}
+
+.calendar-container {
+  flex: 2;
+}
+
+/* FullCalendar Customizations */
+.fc .fc-toolbar-title {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.fc .fc-button-primary {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.fc .fc-button-primary:hover {
+  background-color: #45a049;
+  border-color: #45a049;
+}
+
+.fc .fc-daygrid-day-number {
+  color: #333;
+}
+
+.fc .fc-event {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .form-calendar {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .form-container {
-    flex: 1;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
-  
-  .form-header h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .form-body {
-    display: flex;
     flex-direction: column;
   }
-  
-  .label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .input-wrapper {
-    position: relative;
-    margin-bottom: 15px;
-  }
-  
-  .input-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
-  }
-  
-  .input-date, .input-quantity {
-    width: 100%;
-    padding: 10px 10px 10px 35px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
-  .form-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-  }
-  
-  .btn-success, .btn-danger, .btn-secondary {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-success {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .btn-success:hover {
-    background-color: #218838;
-  }
-  
-  .btn-danger {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  .btn-danger:hover {
-    background-color: #c82333;
-  }
-  
-  .btn-secondary {
-    background-color: #6c757d;
-    color: white;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #5a6268;
-  }
-  
-  .btn-success:disabled, .btn-danger:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-  
-  .error-message {
-    color: #dc3545;
-    margin-top: 10px;
-  }
-  
+
   .calendar-container {
-    flex: 2;
+    margin-top: 20px;
   }
-  
-  /* FullCalendar Overrides */
-  .fc {
-    font-size: 0.9em;
-  }
-  
-  .fc-toolbar-title {
-    font-size: 1.5em !important;
-  }
-  
-  .fc-event {
-    cursor: pointer;
-    padding: 2px 4px;
-  }
-  
-  .fc-event-title {
-    font-weight: bold;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .form-calendar {
-      flex-direction: column;
-    }
-  
-    .calendar-container {
-      margin-top: 20px;
-    }
-  
-    .fc-toolbar {
-      flex-direction: column;
-    }
-  
-    .fc-toolbar-chunk {
-      margin-bottom: 10px;
-    }
-  }
-  
+}
